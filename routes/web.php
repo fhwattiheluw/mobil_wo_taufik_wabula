@@ -20,7 +20,3 @@ Route::get('/', function () {
 Route::get('/about', function () {
     return "Ini adalah pproyek pertama";
 });
-
-Route::get('/blog', function () {
-    return "Ini Halaman blog";
-});
