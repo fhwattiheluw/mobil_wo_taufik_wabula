@@ -1,7 +1,9 @@
 <?php
 
+// DEKLARASI CONTROLLER
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PaketWoController;
+use App\Http\Controllers\userHomeController;
 
 // ROUTE AWAL 
 
@@ -10,6 +12,7 @@ Route::get('/', function () {
 });
 
 // Halaman User
+Route::get('user/home', [userHomeController::class, 'index'])->name('user.home');
 
 
 // Halaman admin
