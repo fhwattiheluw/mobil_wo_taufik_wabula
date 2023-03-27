@@ -20,7 +20,7 @@
         <p>{{ $paket->jenis_paket }}</p>
         <p>Rp.{{ $paket->harga }}</p>
         <p>{{ $paket->spesifikasi }}</p>
-        <p><a href="">Booking</a></p>
+        <p><a href="https://api.whatsapp.com/send?phone={{ $paket->user->nomor_hp }}&text=Apakah bisa pesan paket ini ?">Booking</a></p>
       </div>
     </div>
   	
