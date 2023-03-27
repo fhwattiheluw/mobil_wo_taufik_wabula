@@ -7,6 +7,7 @@
   <div>
     <a href="#" class="brand-logo center">Judul</a>
   </div>
+  
 	@foreach($pakets as $paket)
 		
 		<div class="card">
