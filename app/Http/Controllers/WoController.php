@@ -27,11 +27,15 @@ class WoController extends Controller
     }
 
     public function porto_wo($id_wo){
-        return view('user/wo_porto',['id' => $id_wo]);
+        $data['id_wo'] = $id_wo;
+        $data['about'] = DB::table('users')->select('*')->where('id',$id_wo)->get();
+        return view('user/wo_porto',$data);
     }
 
     public function paket_wo($id_wo){
-        return view('user/wo_paket',['id' => $id_wo]);
+        $data['id_wo'] = $id_wo;
+        $data['about'] = DB::table('users')->select('*')->where('id',$id_wo)->get();
+        return view('user/wo_paket',$data);
     }
 
 }
