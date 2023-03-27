@@ -18,7 +18,7 @@
     <!-- navbar -->
   <nav class="pink darken-1 nav-extended">
     <div class="nav-wrapper">
-      <a href="#" data-target="menu" class="sidenav-trigger"><i class="material-icons">chevron_left</i></a> 
+      <a href="{{route('user.home')}} " data-target="menu" class="sidenav-trigger"><i class="material-icons">chevron_left</i></a> 
       <a href="#" class="brand-logo center">{{$about[0]->nama}} </a>
     </div>
     <div class="nav-content"> <!-- ini adalah navigasi tabs  -->
@@ -32,7 +32,9 @@
 
   </ul>
 
+  <div class="container">
     @yield('content')
+  </div>
 
 
     <!--Import jQuery before materialize.js-->

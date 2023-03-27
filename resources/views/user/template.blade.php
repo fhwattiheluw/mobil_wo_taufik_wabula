@@ -41,7 +41,9 @@
     <li><a href="mobile.html">menu1</a></li>
   </ul>
 
+  <div class="container">
     @yield('content')
+  </div>
 
 
     <!--Import jQuery before materialize.js-->
