@@ -10,6 +10,5 @@
       <div class="parallax"img src="images/parallax1.jpg"></div>
     </div> -->
   <h3>paket</h3>    
-  id user : {{$id}}
             
 @endsection
