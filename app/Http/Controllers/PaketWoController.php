@@ -15,8 +15,12 @@ class PaketWoController extends Controller
      */
     public function index()
     {
-        // $pakets = PaketWo::where('status', 'aktif')->paginate(10);
-        $pakets = PaketWo::all();
+        // if(request('author')) {
+        //     $author = User::firstWhere('username', request('author'));
+        //     $title = ' by ' . $author->name;
+        // }
+
+        $pakets = PaketWo::where('status', 'aktif')->paginate(10);
 
         return view('pakets', compact('pakets'));
     }

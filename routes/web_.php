@@ -1,19 +1,20 @@
 <?php
 
-// DEKLARASI CONTROLLER
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PaketWoController;
-use App\Http\Controllers\userHomeController;
+use App\Http\Controllers\WoController;
 
 // ROUTE AWAL 
 
 Route::get('/', function () {
-    return view('user/login');
+
+    return view('home', [
+        "title" => "Wedding Organizer", 
+        "active" => 'Home'
+    ]);
 });
 
 // Halaman User
-Route::get('user/home', [userHomeController::class, 'index'])->name('user.home');
-Route::get('user/home/{id:id_user}', [userHomeController::class, 'show'])->name('user.show');
 
 
 // Halaman admin
@@ -25,6 +26,9 @@ Route::post('/logout', 'UserLoginController@logout')->name('logout');
 
 Route::get('/paket-wo', [PaketWoController::class, 'index'])->name('paket-wo.index');
 Route::get('/paket-wo/{paket:id}', [PaketWoController::class, 'show'])->name('paketwo.show');
+
+Route::get('/wo', [WoController::class, 'index'])->name('wo.index');
+Route::get('/wo/{wo:id}', [WoController::class, 'show'])->name('wo.show');
 
 // Route paket WO
 // Route::prefix('paket-wo')->group(function () {

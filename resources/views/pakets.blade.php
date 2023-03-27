@@ -9,10 +9,10 @@
 <body>
   <H1>Halaman Paket WO</H1>
   @foreach($pakets as $paket)
-    <h3>Paket {{ $paket->nama_paket }}</h3>
-    <p>oleh {{ $paket->user->nama }}</p>
+    <h2>Paket {{ $paket->nama_paket }}</h2>
+    <p>oleh <a href="/wo/{{ $paket->id_user }}"> {{ $paket->user->nama }} </p></p>
     <p><a href="/paket-wo/{{ $paket->id }}">Detail</a></p>
-    
+    <hr>
   @endforeach
 </body>
 </html>

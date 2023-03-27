@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Halaman Home</title>
+    <title>{{ $title }}</title>
 </head>
 <body>
-    <h1>HOME</h1>
+    <h1>Wellcome to {{ $title }}</h1>
     <h2>Oke fix</h2>
 </body>
 </html>

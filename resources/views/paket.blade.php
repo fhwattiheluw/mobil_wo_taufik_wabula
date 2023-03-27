@@ -12,5 +12,7 @@
     <p>{{ $paket->spesifikasi }}</p>
     <p>{{ $paket->status }}</p>
     <p>{{ $paket->foto_paket1 }}</p>
+    <p>{{ $paket->foto_paket2 }}</p>
+    <button type="button">Pesan Sekarang</button>
 </body>
 </html>

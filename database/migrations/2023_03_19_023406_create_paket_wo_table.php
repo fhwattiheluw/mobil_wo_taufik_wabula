@@ -17,6 +17,7 @@ class CreatePaketWoTable extends Migration
             $table->id();
             $table->foreignId('id_user')->constrained('users');
             $table->string('nama_paket')->nullable(false);
+            $table->enum('jenis', ['silver','gold', 'platinum'])->default('silver');
             $table->unsignedDecimal('harga', 10, 2)->nullable(false);
             $table->text('spesifikasi')->nullable(false);
             $table->enum('status', ['aktif', 'nonaktif'])->default('nonaktif');

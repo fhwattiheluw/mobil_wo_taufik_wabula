@@ -17,6 +17,7 @@ class PaketWoSeeder extends Seeder
         $paket1 = new PaketWo();
         $paket1->id_user = $user1->id;
         $paket1->nama_paket = 'Paket A';
+        $paket1->jenis = 'silver';
         $paket1->harga = 1000000.00;
         $paket1->spesifikasi = 'Paket A spesifikasi';
         $paket1->status = 'aktif';
@@ -27,6 +28,7 @@ class PaketWoSeeder extends Seeder
         $paket2 = new PaketWo();
         $paket2->id_user = $user1->id;
         $paket2->nama_paket = 'Paket B';
+        $paket1->jenis = 'gold';
         $paket2->harga = 1500000.00;
         $paket2->spesifikasi = 'Paket B spesifikasi';
         $paket2->status = 'aktif';
@@ -40,6 +42,7 @@ class PaketWoSeeder extends Seeder
         $paket3 = new PaketWo();
         $paket3->id_user = $user2->id;
         $paket3->nama_paket = 'Paket C';
+        $paket1->jenis = 'platinum';
         $paket3->harga = 2000000.00;
         $paket3->spesifikasi = 'Paket C spesifikasi';
         $paket3->status = 'aktif';
@@ -52,6 +55,7 @@ class PaketWoSeeder extends Seeder
         $paket4 = new PaketWo();
         $paket4->id_user = $user2->id;
         $paket4->nama_paket = 'Paket D';
+        $paket1->jenis = 'platinum';
         $paket4->harga = 2500000.00;
         $paket4->spesifikasi = 'Paket D spesifikasi';
         $paket4->status = 'aktif';
