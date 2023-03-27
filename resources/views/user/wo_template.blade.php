@@ -19,13 +19,13 @@
   <nav class="pink darken-1 nav-extended">
     <div class="nav-wrapper">
       <a href="#" data-target="menu" class="sidenav-trigger"><i class="material-icons">chevron_left</i></a> 
-      <a href="#" class="brand-logo center">Logo</a>
+      <a href="#" class="brand-logo center">{{$about[0]->nama}} </a>
     </div>
     <div class="nav-content"> <!-- ini adalah navigasi tabs  -->
       <ul class="tabs tabs-transparent">
-        <li class="tab"><a href="{{route('user.wo.about',['id_wo'=>$id])}}">Tentang</a></li>
-        <li class="tab"><a href="{{route('user.wo.porto',['id_wo'=>$id])}}">Portofolio</a></li>
-        <li class="tab"><a href="{{route('user.wo.paket',['id_wo'=>$id])}}">Paket</a></li>
+        <li class="tab"><a href="{{route('user.wo.about',['id_wo'=>$id_wo])}}">Tentang</a></li>
+        <li class="tab"><a href="{{route('user.wo.porto',['id_wo'=>$id_wo])}}">Portofolio</a></li>
+        <li class="tab"><a href="{{route('user.wo.paket',['id_wo'=>$id_wo])}}">Paket</a></li>
       </ul>
     </div>
   </nav>

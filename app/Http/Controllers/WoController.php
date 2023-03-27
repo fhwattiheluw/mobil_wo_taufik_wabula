@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class WoController extends Controller
 {
@@ -20,7 +21,9 @@ class WoController extends Controller
 
 // menampilkan view tentang WO pada aplikasi user
     public function about_wo($id_wo){
-        return view('user/wo_about',['id' => $id_wo]);
+        $data['id_wo'] = $id_wo;
+        $data['about'] = DB::table('users')->select('*')->where('id',$id_wo)->get();
+        return view('user/wo_about',$data);
     }
 
     public function porto_wo($id_wo){
