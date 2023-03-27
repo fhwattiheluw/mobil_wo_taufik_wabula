@@ -4,6 +4,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PaketWoController;
 use App\Http\Controllers\userHomeController;
+use App\Http\Controllers\WoController;
 
 // ROUTE AWAL 
 
@@ -14,6 +15,9 @@ Route::get('/', function () {
 // Halaman User
 Route::get('user/home', [userHomeController::class, 'index'])->name('user.home');
 Route::get('user/home/{id:id_user}', [userHomeController::class, 'show'])->name('user.show');
+Route::get('user/wo/about/{id_wo}', [WoController::class, 'about_wo'])->name('user.wo.about');
+Route::get('user/wo/porto/{id_wo}', [WoController::class, 'porto_wo'])->name('user.wo.porto');
+Route::get('user/wo/paket/{id_wo}', [WoController::class, 'paket_wo'])->name('user.wo.paket');
 
 
 // Halaman admin

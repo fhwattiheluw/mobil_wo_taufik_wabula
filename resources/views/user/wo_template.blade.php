@@ -16,29 +16,20 @@
   <body>
 
     <!-- navbar -->
-    <div class="navbar-fixed">
-      <nav class="pink darken-1">
+  <nav class="pink darken-1 nav-extended">
     <div class="nav-wrapper">
-      <a href="#" data-target="menu" class="sidenav-trigger"><i class="material-icons">menu</i></a> 
+      <a href="#" data-target="menu" class="sidenav-trigger"><i class="material-icons">chevron_left</i></a> 
       <a href="#" class="brand-logo center">Logo</a>
-      <a href="#" data-target="mobile-demo" class="right sidenav-trigger"><i class="material-icons">search</i></a>
-       <!-- <form>
-        <div class="input-field">
-          <input id="search" type="search" required>
-          <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-          <i class="material-icons">close</i>
-        </div>
-      </form> -->
+    </div>
+    <div class="nav-content"> <!-- ini adalah navigasi tabs  -->
+      <ul class="tabs tabs-transparent">
+        <li class="tab"><a href="{{route('user.wo.about',['id_wo'=>$id])}}">Tentang</a></li>
+        <li class="tab"><a href="{{route('user.wo.porto',['id_wo'=>$id])}}">Portofolio</a></li>
+        <li class="tab"><a href="{{route('user.wo.paket',['id_wo'=>$id])}}">Paket</a></li>
+      </ul>
     </div>
   </nav>
-    </div>
 
-  <!-- sidenav mobile -->
-    <ul class="sidenav" id="menu">
-    <li><a href="/user/home">Home</a></li>
-    <li><a href="/user/wo">List WO</a></li>
-    <li><a href="collapsible.html">menu1</a></li>
-    <li><a href="mobile.html">menu1</a></li>
   </ul>
 
     @yield('content')

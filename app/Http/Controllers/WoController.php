@@ -17,4 +17,18 @@ class WoController extends Controller
 
         // return view('pakets', compact('pakets'));
     }
+
+// menampilkan view tentang WO pada aplikasi user
+    public function about_wo($id_wo){
+        return view('user/wo_about',['id' => $id_wo]);
+    }
+
+    public function porto_wo($id_wo){
+        return view('user/wo_porto',['id' => $id_wo]);
+    }
+
+    public function paket_wo($id_wo){
+        return view('user/wo_paket',['id' => $id_wo]);
+    }
+
 }
