@@ -16,7 +16,8 @@
   <body>
 
     <!-- navbar -->
-  <nav class="pink darken-1 nav-extended">
+    <div class="navbar-fixed">
+<nav class="pink darken-1 nav-extended">
     <div class="nav-wrapper">
       <a href="{{route('user.home')}} " data-target="menu" class="sidenav-trigger"><i class="material-icons">chevron_left</i></a> 
       <a href="#" class="brand-logo center">{{$about[0]->nama}} </a>
@@ -29,10 +30,9 @@
       </ul>
     </div>
   </nav>
+    </div>
 
-  </ul>
-
-  <div class="container">
+  <div class="container" style="padding-top: 50px;">
     @yield('content')
   </div>
 
@@ -45,5 +45,9 @@
         $('.sidenav').sidenav();
       });
     </script>
+
+    @yield('js')
+
+
   </body>
 </html>

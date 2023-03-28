@@ -37,11 +37,10 @@
     <ul class="sidenav" id="menu">
     <li><a href="/user/home">Home</a></li>
     <li><a href="/user/wo">List WO</a></li>
-    <li><a href="collapsible.html">menu1</a></li>
-    <li><a href="mobile.html">menu1</a></li>
+    <li><a href="collapsible.html">login WO</a></li>
   </ul>
 
-  <div class="container">
+  <div class="container" style="padding-top: 30px;">
     @yield('content')
   </div>
 
