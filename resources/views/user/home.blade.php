@@ -5,9 +5,16 @@
 @endsection
 
 @section('content')
-	@foreach($pakets as $paket)
-		
-		<div class="card">
+
+  <div class="section">
+    <h5 class="orange accent-3" style="padding:20px; color: white;">Wedding Organizer</h5>
+  </div>
+  <div class="divider"></div>
+  <div class="section">
+    <h5 class="orange accent-3" style="padding:20px; color: white;">Paket Wedding</h5>
+    @foreach($pakets as $paket)
+    
+    <div class="card">
       <div class="card-image waves-effect waves-block waves-light">
         <img class="activator" src="/assets/img/paket1.jpg">
       </div>
@@ -23,9 +30,10 @@
         <p><a class="waves-effect pink lighten-3 btn btn-small" href="https://api.whatsapp.com/send?phone={{ $paket->user->nomor_hp }}&text=Apakah bisa pesan paket ini ?"><i class="material-icons right">book</i>Booking</a></p>
       </div>
     </div>
-  	
-	@endforeach
-
+    
+  @endforeach
+    
+  </div>
 	  
             
 @endsection

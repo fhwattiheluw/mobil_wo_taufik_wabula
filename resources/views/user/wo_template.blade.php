@@ -17,7 +17,7 @@
 
     <!-- navbar -->
     <div class="navbar-fixed">
-<nav class="pink darken-1 nav-extended">
+<nav class="orange darken-1 nav-extended">
     <div class="nav-wrapper">
       <a href="{{route('user.home')}} " data-target="menu" class="sidenav-trigger"><i class="material-icons">chevron_left</i></a> 
       <a href="#" class="brand-logo center">{{$about[0]->nama}} </a>

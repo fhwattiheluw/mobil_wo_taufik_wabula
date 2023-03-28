@@ -9,6 +9,16 @@
     <!-- QUERYMINE Page Center Css -->
     @yield('css')
 
+    <style type="text/css">
+      html { 
+        background: url(/assets/img/background.jpg) no-repeat center center fixed; 
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+      }
+    </style>
+
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   </head>
@@ -17,7 +27,7 @@
 
     <!-- navbar -->
     <div class="navbar-fixed">
-      <nav class="pink darken-1">
+      <nav class="orange darken-1">
     <div class="nav-wrapper">
       <a href="#" data-target="menu" class="sidenav-trigger"><i class="material-icons">menu</i></a> 
       <a href="#" class="brand-logo center">Logo</a>
@@ -35,9 +45,10 @@
 
   <!-- sidenav mobile -->
     <ul class="sidenav" id="menu">
-    <li><a href="/user/home">Home</a></li>
-    <li><a href="/user/wo">List WO</a></li>
-    <li><a href="collapsible.html">login WO</a></li>
+    <li><a href="/user/home"><i class="material-icons" style="color: #ff6d00 ;">home</i>Beranda</a></li>
+    <li><a href="/user/wo"><i class="material-icons" style="color: #ff6d00 ;">redeem</i>Paket wedding</a></li>
+    <li><a href="/user/wo"><i class="material-icons" style="color: #ff6d00 ;">local_library</i>Wedding organizer</a></li>
+    <li><a href="collapsible.html"><i class="material-icons" style="color: #ff6d00 ;">person_pin</i>login WO</a></li>
   </ul>
 
   <div class="container" style="padding-top: 30px;">
