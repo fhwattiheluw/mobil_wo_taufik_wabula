@@ -7,11 +7,19 @@
 @section('content')
 
   <div class="section">
-    <h5 class="orange accent-3" style="padding:20px; color: white;">Wedding Organizer</h5>
+    <a href="#">
+      <h5 style="padding:30px; color: white; background: linear-gradient(rgba(245, 153, 39, 1), rgba(245, 153, 39, 0.5), transparent), url(/assets/img/bg-paket2.jpg) no-repeat center; background-size: cover; ">Wedding Organizer</h5>
+    </a>
   </div>
   <div class="divider"></div>
   <div class="section">
-    <h5 class="orange accent-3" style="padding:20px; color: white;">Paket Wedding</h5>
+    <a href="#">
+      <h5 style="padding:30px; color: white; background: linear-gradient(rgba(245, 153, 39, 1), rgba(245, 153, 39, 0.5), transparent), url(/assets/img/background.jpg) no-repeat center; background-size: cover; ">Paket Wedding</h5>
+    </a>
+  </div>
+    <div class="divider"></div>
+    <div class="section">
+      <h5 style="color: #e65100;">Paket wedding</h5>
     @foreach($pakets as $paket)
     
     <div class="card">
@@ -32,6 +40,7 @@
     </div>
     
   @endforeach
+</div>
     
   </div>
 	  

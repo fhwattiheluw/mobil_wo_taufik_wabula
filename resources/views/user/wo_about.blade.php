@@ -9,8 +9,10 @@
     <!-- <div class="parallax-container">
       <div class="parallax"img src="images/parallax1.jpg"></div>
     </div> -->
-  <h4>Tentang kami</h4>   
-  <table>
+  <h4 style="color: #e65100;">Tentang kami</h4>   
+  <div class="card">
+    <div class="card-content">
+      <table>
     <tr>
       <td>Nama</td><td>:</td><td>{{$about[0]->nama}}</td>
     </tr>
@@ -27,6 +29,8 @@
       <td>nama</td><td>:</td><td>{{$about[0]->foto}}</td>
     </tr>
   </table>
+    </div>
+  </div>
   
             
 @endsection

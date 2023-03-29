@@ -10,28 +10,27 @@
     @yield('css')
 
     <style type="text/css">
-      html { 
-        background: url(/assets/img/background.jpg) no-repeat center center fixed; 
+      /*html { 
+        background: linear-gradient(rgba(255, 255, 255, 0.9), transparent), url(/assets/img/background.jpg) no-repeat fixed; center;  
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
         background-size: cover;
-      }
+      }*/
     </style>
 
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   </head>
 
-  <body>
+  <body class=" blue-grey darken-4">
 
     <!-- navbar -->
     <div class="navbar-fixed">
       <nav class="orange darken-1">
     <div class="nav-wrapper">
       <a href="#" data-target="menu" class="sidenav-trigger"><i class="material-icons">menu</i></a> 
-      <a href="#" class="brand-logo center">Logo</a>
-      <a href="#" data-target="mobile-demo" class="right sidenav-trigger"><i class="material-icons">search</i></a>
+      <a href="#" class="brand-logo center">nikahan</a>
        <!-- <form>
         <div class="input-field">
           <input id="search" type="search" required>
