@@ -66,8 +66,6 @@
 @endsection
 
 @section('content')
-  <h4 style="color: #e65100;">Portofolio kami</h4>   
-
   <div class="row">
     <div class="col s12">
       @for($i = 1; $i < 10; $i++)

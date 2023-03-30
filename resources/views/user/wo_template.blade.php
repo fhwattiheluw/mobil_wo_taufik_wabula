@@ -23,7 +23,7 @@
     </style>
   </head>
 
-  <body class="blue-grey darken-4">
+  <body>
 
     <!-- navbar -->
     <div class="navbar-fixed">
