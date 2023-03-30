@@ -5,25 +5,27 @@
 @endsection
 
 @section('content')
-  <h4 style="color: #e65100;">Paket kami</h4>   
 
-    <div class="row">
-    <div class="col s12 m6">
-      @for($i=0; $i<10; $i++)
-      <div class="card">
-        <div class="card-image">
-          <img class="responsive-img materialboxed" src="https://sp-ao.shortpixel.ai/client/to_webp,q_glossy,ret_img,w_606/https://balitopwedding.com/wp-content/uploads/2022/12/Hilton-2-606x727.jpg">
-          <a class="btn-floating halfway-fab waves-effect pink accent-3"><i class="material-icons">bookmark_border</i></a>
-        </div>
-        <div class="card-content">
-          <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
-        </div>
-        <div class="card-reveal">
-          <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-          <p>Here is some more information about this product that is only revealed once clicked on.</p>
-        </div>
-      </div>
-      @endfor
+ <ul class="collection">
+    <li class="collection-item avatar ">
+      <i class="material-icons circle yellow accent-4">business_center</i>
+      <span class="title">GOLD</span>
+      <p>PAKET</p>
+       <a href="#!" class="secondary-content btn orange darken-1 waves-effect waves-light"><i class="material-icons">arrow_forward</i></a>
+    </li>
+    <li class="collection-item avatar">
+      <i class="material-icons circle grey lighten-1">business_center</i>
+      <span class="title">SILVER</span>
+      <p>PAKET</p>
+       <a href="#!" class="secondary-content btn orange darken-1 waves-effect waves-light"><i class="material-icons">arrow_forward</i></a>
+    </li>
+    <li class="collection-item avatar">
+      <i class="material-icons circle  brown lighten-1">business_center</i>
+      <span class="title">BROWN</span>
+      <p>PAKET</p>
+       <a href="#!" class="secondary-content btn orange darken-1 waves-effect waves-light"><i class="material-icons">arrow_forward</i></a>
+    </li>
+  </ul>
 
     </div>
   </div>

@@ -6,20 +6,23 @@
 
 @section('content')
 
-  <div class="section">
-    <a href="#">
-      <h5 style="padding:30px; color: white; background: linear-gradient(rgba(245, 153, 39, 1), rgba(245, 153, 39, 0.5), transparent), url(/assets/img/bg-paket2.jpg) no-repeat center; background-size: cover; ">Wedding Organizer</h5>
+  <div class="row">
+    <div class="col s6">
+    <a href="{{route('user.weddings')}}" class="card z-depth-3 waves-effect waves-light center" style="padding:20px; color: white; background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1), transparent), url(/assets/img/bg-paket2.jpg) no-repeat center; background-size: cover; width: 100%;">
+      <h5>Wedding Organizer</h5>
     </a>
   </div>
+  <div class="col s6">
+    <a href="{{route('user.pakets')}}" class="card z-depth-3 waves-effect waves-light center" style="padding:20px; color: white; background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1), transparent), url(/assets/img/bg-wedding.jpg) no-repeat center; background-size: cover; width: 100%;">
+      <h5>Paket Wedding</h5>
+    </a>
+  </div>
+  </div>
+
+  <div class="row">
+  <h5 class="black-text">Paket Wedding</h5>
   <div class="divider"></div>
   <div class="section">
-    <a href="#">
-      <h5 style="padding:30px; color: white; background: linear-gradient(rgba(245, 153, 39, 1), rgba(245, 153, 39, 0.5), transparent), url(/assets/img/background.jpg) no-repeat center; background-size: cover; ">Paket Wedding</h5>
-    </a>
-  </div>
-    <div class="divider"></div>
-    <div class="section">
-      <h5 style="color: #e65100;">Paket wedding</h5>
     @foreach($pakets as $paket)
     
     <div class="card">
@@ -40,9 +43,30 @@
     </div>
     
   @endforeach
-</div>
-    
   </div>
+
+  <h5 style="color: black;">Wedding organizer</h5>
+  <div class="divider"></div>
+  <div class="section">
+    <div class="row">
+
+      @foreach($wo as $worg)
+      <a href="{{route('user.wo.about',['id_wo'=>$paket->id])}}" class="col s4 waves-effect waves-light">
+        <div class="row holign-wrapper">
+                <div class="col offset-s1 s10">
+                  <img src="https://materializecss.com/images/yuna.jpg" alt="" class="circle responsive-img z-depth-3"> <!-- notice the "circle" class -->
+                </div>
+                <div class="col s12 center">
+                  <span class="black-text">
+                    {{$worg->nama}}
+                  </span>
+                </div>
+              </div>
+      </a>
+      @endforeach
+    </div>
+  </div>
+
 	  
             
 @endsection

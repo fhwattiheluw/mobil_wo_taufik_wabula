@@ -18,12 +18,12 @@
         background-size: cover;
       }*/
     </style>
-
+ 
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   </head>
 
-  <body class=" blue-grey darken-4">
+  <body>
 
     <!-- navbar -->
     <div class="navbar-fixed">
@@ -44,9 +44,9 @@
 
   <!-- sidenav mobile -->
     <ul class="sidenav" id="menu">
-    <li><a href="/user/home"><i class="material-icons" style="color: #ff6d00 ;">home</i>Beranda</a></li>
-    <li><a href="/user/wo"><i class="material-icons" style="color: #ff6d00 ;">redeem</i>Paket wedding</a></li>
-    <li><a href="/user/wo"><i class="material-icons" style="color: #ff6d00 ;">local_library</i>Wedding organizer</a></li>
+    <li><a href="{{route('user.home')}}"><i class="material-icons" style="color: #ff6d00 ;">home</i>Beranda</a></li>
+    <li><a href="{{route('user.pakets')}}"><i class="material-icons" style="color: #ff6d00 ;">redeem</i>Paket wedding</a></li>
+    <li><a href="{{route('user.weddings')}} "><i class="material-icons" style="color: #ff6d00 ;">local_library</i>Wedding organizer</a></li>
     <li><a href="collapsible.html"><i class="material-icons" style="color: #ff6d00 ;">person_pin</i>login WO</a></li>
   </ul>
 

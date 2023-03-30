@@ -5,13 +5,12 @@
 @endsection
 
 @section('content')
-<!-- gambar -->
-    <!-- <div class="parallax-container">
-      <div class="parallax"img src="images/parallax1.jpg"></div>
-    </div> -->
-  <h4 style="color: #e65100;">Tentang kami</h4>   
+
   <div class="card">
     <div class="card-content">
+      <div class="col s12 center">
+        <img src="https://materializecss.com/images/yuna.jpg" alt="" class="circle responsive-img z-depth-3">
+      </div>
       <table>
     <tr>
       <td>Nama</td><td>:</td><td>{{$about[0]->nama}}</td>
