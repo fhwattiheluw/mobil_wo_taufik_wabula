@@ -20,7 +20,8 @@ Route::get('user/wo/porto/{id_wo}', [WoController::class, 'porto_wo'])->name('us
 Route::get('user/wo/paket/{id_wo}', [WoController::class, 'paket_wo'])->name('user.wo.paket');
 
 
-// Halaman admin
+// Halaman admin WO
+Route::get('/wo', [WoController::class, 'index']);
 
 
 Route::get('/login', 'App\Http\Controllers\UserController@showLoginForm')->name('login');

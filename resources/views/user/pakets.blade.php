@@ -17,7 +17,7 @@
       <div class="card-reveal">
         <span class="card-title grey-text text-darken-4">{{ $paket->nama_paket }}<i class="material-icons right">close</i></span>
         <p>{{ $paket->spesifikasi }}</p>
-        <p><a href="https://api.whatsapp.com/send?phone={{ $paket->user->nomor_hp }}&text=Apakah bisa pesan paket ini ?">Booking</a></p>
+        <p><a href="https://api.whatsapp.com/send?phone={{ $paket->user->nomor_hp }}&text=Apakah%bisa%pesan%paket%ini%?">Booking</a></p>
       </div>
     </div>
   	
