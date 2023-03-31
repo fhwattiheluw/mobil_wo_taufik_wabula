@@ -2,21 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
 
 class WoController extends Controller
 {
     public function index()
     {
-        if(request('wo')){
-            $wo = User::where('id', 'wo');
-        }
-        return view('wo', $wo);
-        // $wo = User::where('id', 'aktif')->paginate(10);
-
-        // return view('pakets', compact('pakets'));
+        $title = "Wedding Organizer";        
+        return view('wo.index', compact('title'));
     }
 
 // menampilkan view tentang WO pada aplikasi user

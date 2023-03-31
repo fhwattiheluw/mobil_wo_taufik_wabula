@@ -13,7 +13,14 @@ class PortofolioWo extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('portofolio_wo', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('id_user')->constrained('users');
+            $table->string('nama_portofolio')->nullable(false);
+            $table->text('deskripsi')->nullable(true);
+            $table->string('foto_portofolio')->nullable(false);        
+            $table->timestamps();
+        });
     }
 
     /**
@@ -23,6 +30,6 @@ class PortofolioWo extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('portofolio_wo');
     }
 }

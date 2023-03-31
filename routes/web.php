@@ -23,7 +23,9 @@ Route::get('user/wo/paket/{id_wo}', [WoController::class, 'paket_wo'])->name('us
 Route::get('user/wo/paket/{id_wo}/{paket}', [WoController::class, 'view_paket'])->name('user.wo.paket.list');
 
 
-// Halaman admin
+// Halaman admin WO
+Route::get('/wo', [WoController::class, 'index']);
+Route::get('/wo/packets', [PaketWoController::class, 'index']);
 
 
 Route::get('/login', 'App\Http\Controllers\UserController@showLoginForm')->name('login');

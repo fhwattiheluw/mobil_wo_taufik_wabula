@@ -22,7 +22,7 @@ class PaketWoController extends Controller
 
         $pakets = PaketWo::where('status', 'aktif')->paginate(10);
 
-        return view('pakets', compact('pakets'));
+        return view('wo.pakets.index', compact('pakets'));
     }
 
     // public function show(PaketWo $paketwo)
