@@ -21,10 +21,7 @@ class CreatePaketWoTable extends Migration
             $table->unsignedDecimal('harga', 10, 2)->nullable(false);
             $table->text('spesifikasi')->nullable(false);
             $table->enum('status', ['aktif', 'nonaktif'])->default('nonaktif');
-            $table->string('foto_paket1')->nullable(false);
-            $table->string('foto_paket2')->nullable(true);
-            $table->string('foto_paket3')->nullable(true);
-            $table->string('foto_paket4')->nullable(true);
+            $table->string('foto_paket')->nullable(false);
             $table->timestamps();
         });
     }

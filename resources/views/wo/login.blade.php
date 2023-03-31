@@ -4,7 +4,7 @@
     <!--Import Google Icon Font-->
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
-    <link type="text/css" rel="stylesheet" href="assets/materialize/css/materialize.min.css" media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="/assets/materialize/css/materialize.min.css" media="screen,projection"/>
 
     <!-- QUERYMINE Page Center Css -->
 
@@ -30,7 +30,7 @@
 
         <!-- Form Section -->
 
-      <form action="#" method="POST"> <!-- Change The Form Method From Here-->
+      <form action="/wo/login" method="POST"> <!-- Change The Form Method From Here-->
         <!--csrf untuk proteksi saat mengirim data -->
         @csrf 
 
@@ -50,7 +50,7 @@
         <div class="col s12 m12 l12">
             <div class="input-field">
                 <i class="material-icons prefix">person</i>
-                <input type="text" name="username" id="username">
+                <input type="text" name="email" id="username">
                 <label for="username">Email</label>
             </div>
         </div>

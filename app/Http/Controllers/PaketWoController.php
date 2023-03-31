@@ -20,9 +20,9 @@ class PaketWoController extends Controller
         //     $title = ' by ' . $author->name;
         // }
 
-        $pakets = PaketWo::where('status', 'aktif')->paginate(10);
+        $items = PaketWo::where('status', 'aktif')->paginate(10);
 
-        return view('wo.pakets.index', compact('pakets'));
+        return view('wo.packets.index', compact('items'));
     }
 
     // public function show(PaketWo $paketwo)
@@ -48,7 +48,8 @@ class PaketWoController extends Controller
      */
     public function create()
     {
-        //
+        $title = 'Create Packet';
+        return view('wo.packets.create', ['title' => $title]);
     }
 
     /**
@@ -59,7 +60,22 @@ class PaketWoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        dd($request);
+        
+        $validatedData = $request->validate([
+            'id_user'=>'required',
+            'nama_pake'=>'required|max:200',
+            'jenis'=>'required',
+            'harga'=>'required|max:200',
+            'spesifikasi'=>'max:255',
+            'status'=>'required',
+            'foto_paket' => 'required',
+        ]);
+        
+        PaketWo::create($validatedData);
+
+        return redirect('/wo/')->with('succes','Paket WO Inserted');
+    
     }
 
 

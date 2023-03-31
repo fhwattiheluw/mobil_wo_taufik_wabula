@@ -15,7 +15,7 @@ class UserController extends Controller
      */
     public function showLoginForm()
     {
-        return view('user.login');
+        return view('wo.login');
     }
 
     /**
@@ -26,22 +26,17 @@ class UserController extends Controller
      */
     public function login(Request $request)
     {
-        // Validasi input form login
-        $this->validate($request, [
+        $credentials = $request->validate([
             'email' => 'required|email',
-            'password' => 'required',
+            'password' => 'required'
         ]);
 
-        // Coba melakukan otentikasi pengguna
-        if (Auth::attempt($request->only('email', 'password'))) {
-            // Jika otentikasi berhasil, redirect ke halaman utama
-            return redirect()->intended('/');
+        if(Auth::attempt($credentials)) {
+            $request->session()->regenerate();
+            return redirect()->intended('/wo');
         }
-
-        // Jika otentikasi gagal, tampilkan pesan error
-        return back()->withErrors([
-            'email' => 'Email atau password salah.',
-        ]);
+        dd('gagal login');
+        return back()->with('loginError', 'Login failed!');
     }
 
     /**
@@ -58,6 +53,6 @@ class UserController extends Controller
 
         $request->session()->regenerateToken();
 
-        return redirect('/');
+        return redirect('/wo');
     }
 }
