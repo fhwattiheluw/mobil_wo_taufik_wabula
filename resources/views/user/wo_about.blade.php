@@ -1,10 +1,13 @@
 @extends('user/wo_template')
 
+
 @section('css')
 <!-- lokasi CSS -->
 @endsection
 
 @section('content')
+
+  <h5>Tentang</h5>
 
   <div class="card">
     <div class="card-content">

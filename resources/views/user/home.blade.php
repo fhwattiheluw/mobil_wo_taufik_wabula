@@ -1,10 +1,12 @@
 @extends('user/template')
 
-@section('css')
+@section('css-main')
 <!-- lokasi CSS -->
 @endsection
 
-@section('content')
+@section('content-main')
+
+<div class="container">
 
   <div class="row">
     <div class="col s6">
@@ -65,8 +67,8 @@
       </a>
       @endforeach
     </div>
-  </div>
+  </div>  
 
-	  
-            
+</div>
+
 @endsection

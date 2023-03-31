@@ -1,12 +1,12 @@
 @extends('user/template')
 
-@section('css')
+@section('css-main')
 <!-- lokasi CSS -->
 @endsection
 
 @section('content')
-
-   <h5 class="black-text">Paket Wedding organizer</h5>
+<div class="container">
+  <h5 class="black-text">Paket Wedding organizer</h5>
 
     <ul class="collection">
     <li class="collection-item avatar ">
@@ -52,6 +52,7 @@
     
   @endforeach
   </div>
-	  
-            
+</div>
+
+    
 @endsection
