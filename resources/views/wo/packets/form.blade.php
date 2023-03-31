@@ -3,7 +3,8 @@
                     @section('content')
                     <!-- jika berhasil save data -->
                     @if(Session::has('success'))
-                    <div class="toast align-items-center text-bg-success border-0 fade show" role="alert" aria-live="assertive" aria-atomic="true">
+                    <div class="position-relative">
+                        <div class="toast align-items-center text-bg-success border-0 fade show " role="alert" aria-live="assertive" aria-atomic="true">
                       <div class="d-flex">
                         <div class="toast-body">
                           {{Session::get('success')}}
@@ -11,6 +12,7 @@
                       <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
                   </div>
               </div>
+                    </div>
               @endif
 
               <form class="card" action="{{route('wo.paket.add')}} " method="post" enctype="multipart/form-data">
