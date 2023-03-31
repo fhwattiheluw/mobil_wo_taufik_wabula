@@ -5,12 +5,16 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PaketWoController;
 use App\Http\Controllers\userHomeController;
 use App\Http\Controllers\WoController;
+use App\Http\Controllers\UserController;
 
 // ROUTE AWAL 
 
 Route::get('/', function () {
+<<<<<<< HEAD
     return view('user/login');
 })->name('login');
+=======
+>>>>>>> be9af4d172602db6ef7eecac6e4626e2e6870860
 
 // Halaman User
 Route::get('user/home', [userHomeController::class, 'index'])->name('user.home');
@@ -24,13 +28,18 @@ Route::get('user/wo/paket/{id_wo}/{paket}', [WoController::class, 'view_paket'])
 
 
 // Halaman admin WO
-Route::get('/wo', [WoController::class, 'index']);
-Route::get('/wo/packets', [PaketWoController::class, 'index']);
+Route::get('/wo/login', 'App\Http\Controllers\UserController@showLoginForm')->name('login');
+Route::post('/wo/login', [UserController::class, 'login']);
+Route::post('/wo/logout', [UserController::class, 'logout']);
+
+Route::get('/wo', [WoController::class, 'index'])->middleware('auth');
+Route::get('/wo/packets', [PaketWoController::class, 'index'])->middleware('auth');
+Route::get('/wo/packets/create', [PaketWoController::class, 'create'])->middleware('auth');
+Route::post('/wo/packets/create', [PaketWoController::class, 'store'])->middleware('auth');
 
 
-Route::get('/login', 'App\Http\Controllers\UserController@showLoginForm')->name('login');
-Route::post('/login', 'App\Http\Controllers\UserController@login')->name('login.post');
-Route::post('/logout', 'UserLoginController@logout')->name('logout');
+
+
 
 Route::get('/paket-wo', [PaketWoController::class, 'index'])->name('paket-wo.index');
 Route::get('/paket-wo/{paket:id}', [PaketWoController::class, 'show'])->name('paketwo.show');
