@@ -10,7 +10,7 @@ use App\Http\Controllers\WoController;
 
 Route::get('/', function () {
     return view('user/login');
-});
+})->name('login');
 
 // Halaman User
 Route::get('user/home', [userHomeController::class, 'index'])->name('user.home');

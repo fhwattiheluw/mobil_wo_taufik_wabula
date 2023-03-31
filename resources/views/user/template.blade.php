@@ -30,7 +30,7 @@
     <li><a href="{{route('user.home')}}"><i class="material-icons" style="color: #ff6d00 ;">home</i>Beranda</a></li>
     <li><a href="{{route('user.pakets')}}"><i class="material-icons" style="color: #ff6d00 ;">redeem</i>Paket wedding</a></li>
     <li><a href="{{route('user.weddings')}} "><i class="material-icons" style="color: #ff6d00 ;">local_library</i>Wedding organizer</a></li>
-    <li><a href="collapsible.html"><i class="material-icons" style="color: #ff6d00 ;">person_pin</i>login WO</a></li>
+    <li><a href="{{route('login')}} "><i class="material-icons" style="color: #ff6d00 ;">person_pin</i>login WO</a></li>
   </ul>
 
   @yield('nav_wo') <!-- navbar bottom khusus untuk tampilan WO -->
