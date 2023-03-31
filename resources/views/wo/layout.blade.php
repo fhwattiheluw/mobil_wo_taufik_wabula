@@ -25,7 +25,7 @@
 </nav>
 
 
-<span class="label label-info">{{Auth::user()->nama}}</span>
+<!-- <span class="label label-info">{{Auth::user()->nama}}</span> -->
 
 <div class="container" style="padding-top: 20px;">
     @yield('content')
