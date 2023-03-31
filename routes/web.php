@@ -24,15 +24,19 @@ Route::get('user/wo/paket/{id_wo}', [WoController::class, 'paket_wo'])->name('us
 Route::get('user/wo/paket/{id_wo}/{paket}', [WoController::class, 'view_paket'])->name('user.wo.paket.list');
 
 
+
 // Halaman admin WO
 Route::get('/wo/login', 'App\Http\Controllers\UserController@showLoginForm')->name('login');
 Route::post('/wo/login', [UserController::class, 'login']);
-Route::post('/wo/logout', [UserController::class, 'logout']);
+Route::get('/wo/logout', [UserController::class, 'logout'])->name('wo.logout');
 
-Route::get('/wo', [WoController::class, 'index'])->middleware('auth');
-Route::get('/wo/packets', [PaketWoController::class, 'index'])->middleware('auth');
-Route::get('/wo/packets/create', [PaketWoController::class, 'create'])->middleware('auth');
-Route::post('/wo/packets/create', [PaketWoController::class, 'store'])->middleware('auth');
+// khusus untuk login
+Route::middleware(['auth'])->group(function () {  
+Route::get('/wo/home', [WoController::class, 'index'])->name('wo.home');
+Route::get('/wo/packets', [PaketWoController::class, 'index'])->name('wo.paket');
+Route::get('/wo/packets/create', [PaketWoController::class, 'create']);
+Route::post('/wo/packets/create', [PaketWoController::class, 'store']);
+});
 
 
 
