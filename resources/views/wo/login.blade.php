@@ -26,7 +26,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   </head>
 
-  <body class="orange accent-2">
+  <body class="blue accent-4">
 
         <!-- Form Section -->
 
@@ -70,7 +70,7 @@
             <!-- Form Button Section  -->
 
         <div class="center">
-            <input type="submit" value="Login" name="login" class="orange darken-4 btn waves-effect waves-light " style="width:100%;">
+            <input type="submit" value="Login" name="login" class="blue darken-3 btn waves-effect waves-light " style="width:100%;">
             
         </div>
 
