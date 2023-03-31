@@ -10,7 +10,7 @@ use App\Http\Controllers\UserController;
 // ROUTE AWAL 
 
 Route::get('/', function () {
-    return view('user/login');
+        return view('wo/login');
 })->name('login');
 
 // Halaman User
