@@ -56,15 +56,20 @@ class PaketWoController extends Controller
      */
     public function store(Request $request)
     {   
+        $image = $request->file('foto_paket');
         $validatedData = $request->validate([
             'id_user'=>'required',
             'nama_paket'=>'required|max:200',
             'jenis'=>'required',
-            'harga'=>'required|max:200',
+            'harga'=>'required|max:10',
             'spesifikasi'=>'max:255',
             'status'=>'required',
-            'foto_paket' => 'required',
+            'foto_paket' => 'required|image|mimes:png,jpg,jpeg',
         ]);
+        $namaGambar = $image->hashName();
+        $validatedData['foto_paket'] = $namaGambar;
+
+        $image->storeAs('public/assets', $namaGambar);
 
         $paketwo = PaketWo::create($validatedData);
 

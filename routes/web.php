@@ -34,7 +34,7 @@ Route::get('/wo/logout', [UserController::class, 'logout'])->name('wo.logout');
 Route::middleware(['auth'])->group(function () {  
         Route::get('/wo/home', [WoController::class, 'index'])->name('wo.home');
         Route::get('/wo/packets', [PaketWoController::class, 'index'])->name('wo.paket');
-        Route::get('/wo/packets/create', [PaketWoController::class, 'create']);
+        Route::get('/wo/packets/create', [PaketWoController::class, 'create'])->name('wo.paket.create');
         Route::post('/wo/packets/create', [PaketWoController::class, 'store']);
         Route::get('/wo/packets/{id}/edit', [PaketWoController::class, 'edit'])->name('wo.edit');
         Route::put('/wo/packets/{id}/edit', [PaketWoController::class, 'update']);
