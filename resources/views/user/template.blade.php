@@ -7,18 +7,8 @@
     <link type="text/css" rel="stylesheet" href="/assets/materialize/css/materialize.min.css" media="screen,projection"/>
 
     <!-- QUERYMINE Page Center Css -->
-    @yield('css')
+    @yield('css-main')
 
-    <style type="text/css">
-      /*html { 
-        background: linear-gradient(rgba(255, 255, 255, 0.9), transparent), url(/assets/img/background.jpg) no-repeat fixed; center;  
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover;
-      }*/
-    </style>
- 
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   </head>
@@ -26,18 +16,11 @@
   <body>
 
     <!-- navbar -->
-    <div class="navbar-fixed">
+    <div class="">
       <nav class="orange darken-1">
     <div class="nav-wrapper">
       <a href="#" data-target="menu" class="sidenav-trigger"><i class="material-icons">menu</i></a> 
       <a href="#" class="brand-logo center">nikahan</a>
-       <!-- <form>
-        <div class="input-field">
-          <input id="search" type="search" required>
-          <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-          <i class="material-icons">close</i>
-        </div>
-      </form> -->
     </div>
   </nav>
     </div>
@@ -50,9 +33,9 @@
     <li><a href="collapsible.html"><i class="material-icons" style="color: #ff6d00 ;">person_pin</i>login WO</a></li>
   </ul>
 
-  <div class="container" style="padding-top: 30px;">
-    @yield('content')
-  </div>
+  @yield('nav_wo') <!-- navbar bottom khusus untuk tampilan WO -->
+    @yield('content-main')
+  
 
 
     <!--Import jQuery before materialize.js-->

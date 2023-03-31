@@ -20,6 +20,7 @@ Route::get('user/pakets', [userHomeController::class, 'list_paket'])->name('user
 Route::get('user/wo/about/{id_wo}', [WoController::class, 'about_wo'])->name('user.wo.about');
 Route::get('user/wo/porto/{id_wo}', [WoController::class, 'porto_wo'])->name('user.wo.porto');
 Route::get('user/wo/paket/{id_wo}', [WoController::class, 'paket_wo'])->name('user.wo.paket');
+Route::get('user/wo/paket/{id_wo}/{paket}', [WoController::class, 'view_paket'])->name('user.wo.paket.list');
 
 
 // Halaman admin

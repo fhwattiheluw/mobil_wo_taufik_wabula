@@ -3,7 +3,7 @@
 @section('css')
 @endsection
 
-@section('content')
+@section('content-main')
 	@foreach($pakets as $paket)
 		
 		<div class="card">

@@ -38,4 +38,13 @@ class WoController extends Controller
         return view('user/wo_paket',$data);
     }
 
+    public function view_paket($id_wo,$paket = '0') /*menampilkan paket default adalah gold '1'*/
+    {
+        $data['id_wo'] = $id_wo;
+        $data['about'] = DB::table('users')->select('*')->where('id',$id_wo)->get();
+        $data['paket'] = $paket;
+
+        return view('user/wo_list_paket',$data);
+    }
+
 }

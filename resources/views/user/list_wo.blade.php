@@ -1,6 +1,7 @@
 @extends('user/template')
 
-@section('content')
+@section('content-main')
+<div class="container">
 	<h5 style="color: black;">Wedding organizer</h5>
 	<div class="divider"></div>
 	<div class="section">
@@ -20,5 +21,6 @@
 			</a>
 			@endfor
 		</div>
-	</div>
+	</div>	
+</div>
 @endsection

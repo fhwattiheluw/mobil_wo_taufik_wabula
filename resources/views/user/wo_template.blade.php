@@ -1,63 +1,48 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <!--Import Google Icon Font-->
-    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!--Import materialize.css-->
-    <link type="text/css" rel="stylesheet" href="/assets/materialize/css/materialize.min.css" media="screen,projection"/>
+@extends('user/template')
 
-    <!-- QUERYMINE Page Center Css -->
-    @yield('css')
-
-    <!--Let browser know website is optimized for mobile-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
-    <style type="text/css">
-      /*html { 
-        background: linear-gradient(rgba(255, 255, 255, 0.9), transparent), url(/assets/img/background.jpg) no-repeat fixed center;  
-        -webkit-background-size: cover;
+@section('css-main')
+  <style type="text/css">
+    body{
+      background: url('/assets/img/bg-wedding.jpg') fixed no-repeat center; 
+  -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
         background-size: cover;
-      }*/
-    </style>
-  </head>
+    }
+  </style>
+@endsection
 
-  <body>
+@section('content-main')
 
-    <!-- navbar -->
-    <div class="navbar-fixed">
-<nav class="orange darken-1 nav-extended">
-    <div class="nav-wrapper">
-      <a href="{{route('user.home')}} " data-target="menu" class="sidenav-trigger"><i class="material-icons">chevron_left</i></a> 
-      <a href="#" class="brand-logo center">{{$about[0]->nama}} </a>
-    </div>
-    <div class="nav-content"> <!-- ini adalah navigasi tabs  -->
-      <ul class="tabs tabs-transparent">
-        <li class="tab"><a href="{{route('user.wo.about',['id_wo'=>$id_wo])}}">Tentang</a></li>
-        <li class="tab"><a href="{{route('user.wo.porto',['id_wo'=>$id_wo])}}">Portofolio</a></li>
-        <li class="tab"><a href="{{route('user.wo.paket',['id_wo'=>$id_wo])}}">Paket</a></li>
-      </ul>
-    </div>
-  </nav>
-    </div>
+  <div style="background-color: rgba(255, 255, 255, 0.5); width: 100%; margin: 0px; min-height: 700px; padding-bottom: 50px;">
+    <div class="container">
 
-  <div class="container" style="padding-top: 50px;">
     @yield('content')
-  </div>
 
+    </div>  
+  </div>  
+@endsection
 
-    <!--Import jQuery before materialize.js-->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script type="text/javascript"  src="/assets/materialize/js/materialize.min.js"></script>
-    <script type="text/javascript">
-       $(document).ready(function(){
-        $('.sidenav').sidenav();
-      });
-    </script>
+@section('nav_wo')
+<div class="navbar-fixed" style="position:fixed;">
+        <nav style="bottom: 0;" class="orange lighten-5"> <!-- navbar bottom -->
+          <div class="nav-wrapper center">
+            <ul id="nav-mobile" >
+              <li style="min-width: 70px;">
+                <a href="{{ url()->previous() }}" class="orange-text text-darken-1"><i class="material-icons" >chevron_left</i></a>
+              </li>
+              <li style="min-width: 70px; " class="{{ (Request::segment(3) == 'about') ? 'active' : '' }} center">
+                <a href="{{route('user.wo.about',['id_wo'=>$id_wo])}}" class="orange-text text-darken-1"><i class="material-icons" >person_pin</i> </a>
+              </li>
+              <li>
+                <a class="btn-floating btn-large  green accent-4">
+        <i class="large material-icons">message</i></a>
+              </li>
+              <li style="min-width: 70px;" class="{{ (Request::segment(3) == 'porto') ? 'active' : '' }}"><a href="{{route('user.wo.porto',['id_wo'=>$id_wo])}}" class="orange-text text-darken-1"><i class="material-icons">photo_album</i></a></li>
+              <li style="min-width: 70px;" class="{{ (Request::segment(3) == 'paket') ? 'active' : '' }}"><a href="{{route('user.wo.paket',['id_wo'=>$id_wo])}}" class="orange-text text-darken-1"><i class="material-icons" style="color: #ff6d00 ;">business_center</i></a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+@endsection
 
-    @yield('js')
-
-
-  </body>
-</html>
