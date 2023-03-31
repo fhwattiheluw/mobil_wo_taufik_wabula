@@ -33,9 +33,9 @@ class UserController extends Controller
 
         if(Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            return redirect()->intended('/wo');
+            return redirect()->route('wo.home');
         }
-        dd('gagal login');
+        
         return back()->with('loginError', 'Login failed!');
     }
 
