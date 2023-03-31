@@ -5,6 +5,7 @@
  
 <div class="row">
   <div class="col">
+
   @foreach($items as $item)
   <div class="card" style="margin-bottom:10px;">
     <img src="/assets/img/bg-paket2.jpg" class="card-img-top" >
@@ -13,8 +14,13 @@
       <p class="card-text">{{$item->spesifikasi}}</p>
       <p class="card-text">{{$item->harga}}</p>
       <p><span class="badge text-bg-primary">{{$item->jenis}}</span></p>
-      <a href="#" class="card-link">Edit</a>
-    <a href="#" class="card-link">Hapus</a>
+      <a href="{{route('wo.edit',$item->id)}}" class="card-link">Edit</a>
+      <form action="{{route('wo.delete',$item->id)}}" method="post">
+        @csrf
+        @method('DELETE')
+        <input type="hidden" name="id" value="{{$item->id}}">
+        <input type="submit" class="btn btn-danger" value="Delete">
+      </form>
     </div>
   </div>
     <!-- <div class="thumbnail">
@@ -56,4 +62,5 @@
     </tr>
   </table>
 </div> -->
+
 @endsection

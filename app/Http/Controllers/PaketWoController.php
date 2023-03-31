@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\PaketWo;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Auth\Events\Validated;
 
 class PaketWoController extends Controller
 {
@@ -15,11 +16,6 @@ class PaketWoController extends Controller
      */
     public function index()
     {
-        // if(request('author')) {
-        //     $author = User::firstWhere('username', request('author'));
-        //     $title = ' by ' . $author->name;
-        // }
-
         $items = PaketWo::where('status', 'aktif')->paginate(10);
 
         return view('wo.packets.index', compact('items'));
@@ -70,10 +66,13 @@ class PaketWoController extends Controller
             'foto_paket' => 'required',
         ]);
 
-        PaketWo::create($validatedData);
+        $paketwo = PaketWo::create($validatedData);
 
-        return redirect('/wo/packets')->with('succes','Paket WO Inserted');
-    
+        if($paketwo){
+            return redirect('/wo/packets')->with('succes','Paket WO Inserted');
+        }else{
+            return redirect('/wo/packets')->with('error','Paket WO Inserted');
+        }
     }
 
 
@@ -99,7 +98,48 @@ class PaketWoController extends Controller
      */
     public function update(Request $request, PaketWo $paketWo)
     {
-        dd('ini bagian update');
+        $image = $request->file('foto_paket');
+        $this->validate($request, [
+            'nama_paket'=>'required|max:200',
+            'jenis'=>'required',
+            'harga'=>'required|max:200',
+            'spesifikasi'=>'max:255',
+            'status'=>'required',
+        ]);
+        
+
+        $paketWo = PaketWo::findOrFail($request->id);
+        if($request->foto_paket == ""){
+            $paketWo->update([
+                'nama_paket'=> $request->nama_paket,
+                'jenis'=> $request->jenis,
+                'harga'=> $request->harga,
+                'spesifikasi'=> $request->spesifikasi,
+                'status'=> $request->status,
+            ]);
+        }else{
+            $this->validate($request, [
+                'foto_paket'     => 'required|image|mimes:png,jpg,jpeg',
+            ]);
+            $image_name = $image->hashName();
+            $image->store('/assets');
+            
+            $paketWo->update([
+                'nama_paket'=> $request->nama_paket,
+                'jenis'=> $request->jenis,
+                'harga'=> $request->harga,
+                'spesifikasi'=> $request->spesifikasi,
+                'status'=> $request->status,
+                'foto_paket' => $image_name
+            ]);
+        }
+
+        if($paketWo){
+            return redirect()->route('wo.paket')->with(['success' => 'Berhasil update']);
+        }else{
+            return redirect()->route('wo.paket')->with(['error' => 'gagal update data']);
+        }
+        
     }
 
     /**
@@ -108,8 +148,15 @@ class PaketWoController extends Controller
      * @param  \App\Models\PaketWo  $paketWo
      * @return \Illuminate\Http\Response
      */
-    public function destroy(PaketWo $paketWo)
+    public function destroy(Request $request)
     {
-        //
+        $paketWo = PaketWo::findOrFail($request->id);
+        $paketWo->delete();
+        
+        if($paketWo){
+            return redirect()->route('wo.paket')->with(['success' => 'Berhasil hapus data']);
+        }else{
+            return redirect()->route('wo.paket')->with(['error' => 'gagal hapus data']);
+        }
     }
 }

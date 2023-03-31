@@ -2,7 +2,7 @@
 
 @section('content')
 <h3>Add Data Packet</h3>
-<form class="form" action="" method="post">
+<form class="form" action="" method="post" enctype="multipart/form-data">
     @csrf
 
   <div class="form-group">

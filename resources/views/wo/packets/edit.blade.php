@@ -2,12 +2,12 @@
 
 @section('content')
 <h3>Edit Data Packet</h3>
-<form class="form" action="/wo/packets/{{$item->id}}/edit" method="post">
+<form class="form" action="{{route('wo.edit',$item->id)}}" method="post" enctype="multipart/form-data">
     @csrf
     @method('PUT')
   <div class="form-group">
     <div class="col-sm-10">
-      <input type="hidden" class="form-control" name="id_user" id="id_user" value="{{$item->id_user}}">
+      <input type="hidden" class="form-control" name="id" id="id" value="{{$item->id}}">
     </div>
   </div>
   <div class="form-group">
