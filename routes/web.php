@@ -10,8 +10,8 @@ use App\Http\Controllers\UserController;
 // ROUTE AWAL 
 
 Route::get('/', function () {
-    return view('wo/login');
-});
+        return view('wo/login');
+})->name('login');
 
 // Halaman User
 Route::get('user/home', [userHomeController::class, 'index'])->name('user.home');
