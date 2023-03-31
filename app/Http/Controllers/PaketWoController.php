@@ -59,22 +59,20 @@ class PaketWoController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        dd($request);
-        
+    {   
         $validatedData = $request->validate([
             'id_user'=>'required',
-            'nama_pake'=>'required|max:200',
+            'nama_paket'=>'required|max:200',
             'jenis'=>'required',
             'harga'=>'required|max:200',
             'spesifikasi'=>'max:255',
             'status'=>'required',
             'foto_paket' => 'required',
         ]);
-        
+
         PaketWo::create($validatedData);
 
-        return redirect('/wo/')->with('succes','Paket WO Inserted');
+        return redirect('/wo/packets')->with('succes','Paket WO Inserted');
     
     }
 
@@ -85,9 +83,11 @@ class PaketWoController extends Controller
      * @param  \App\Models\PaketWo  $paketWo
      * @return \Illuminate\Http\Response
      */
-    public function edit(PaketWo $paketWo)
+    public function edit($id)
     {
-        //
+        $title = 'Edit Data';
+        $item = PaketWo::find($id);
+        return view('wo.packets.edit', ['item' => $item, 'title' => $title]);
     }
 
     /**
@@ -99,7 +99,7 @@ class PaketWoController extends Controller
      */
     public function update(Request $request, PaketWo $paketWo)
     {
-        //
+        dd('ini bagian update');
     }
 
     /**

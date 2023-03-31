@@ -37,7 +37,7 @@
   <div class="form-group">
     <label for="harga" class="col-sm-2 control-label">Harga</label>
     <div class="col-sm-10">
-      <input type="number" class="form-control" id="harga" placeholder="Harga Rp.">
+      <input type="number" class="form-control" name="harga" id="harga" placeholder="Harga Rp.">
     </div>
   </div>
   <div class="form-group">
@@ -61,7 +61,7 @@
   </div>
   <div class="form-group">
     <label for="status" class="col-sm-2 control-label">Gambar</label>
-    <input type="file" src="" alt="gambar" name="foto_paket">
+    <input type="file" name="foto_paket" id="foto_paket" alt="foto_paket">
   </div>
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
@@ -70,3 +70,4 @@
   </div>
 </form>
 @endsection
+

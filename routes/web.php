@@ -33,6 +33,8 @@ Route::get('/wo', [WoController::class, 'index'])->middleware('auth');
 Route::get('/wo/packets', [PaketWoController::class, 'index'])->middleware('auth');
 Route::get('/wo/packets/create', [PaketWoController::class, 'create'])->middleware('auth');
 Route::post('/wo/packets/create', [PaketWoController::class, 'store'])->middleware('auth');
+Route::get('/wo/packets/{id}/edit', [PaketWoController::class, 'edit'])->middleware('auth');
+Route::put('/wo/packets/{id}/edit', [PaketWoController::class, 'update'])->middleware('auth');
 
 
 

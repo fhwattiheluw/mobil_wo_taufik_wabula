@@ -11,7 +11,7 @@
       <div class="caption">
         <h3>{{$item->nama_paket}}</h3>
         <p>{{$item->spesifikasi}}</p>
-        <p><a href="#" class="btn btn-warning" role="button">Edit</a> <a href="#" class="btn btn-danger" role="button">Delete</a></p>
+        <p><a href="/wo/packets/{{$item->id}}/edit" class="btn btn-warning" role="button">Edit</a> <a href="#" class="btn btn-danger" role="button">Delete</a></p>
       </div>
     </div>
   @endforeach
