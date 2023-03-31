@@ -2,21 +2,21 @@
 
 @section('content')
 <a class="btn btn-primary float-add shadow " href="/wo/packets/create">Add</a>
- 
+
 <div class="row">
   <div class="col">
-  @foreach($items as $item)
-  <div class="card" style="margin-bottom:10px;">
-    <img src="/assets/img/bg-paket2.jpg" class="card-img-top" >
-    <div class="card-body">
-      <h5 class="card-title">{{$item->nama_paket}}</h5>
-      <p class="card-text">{{$item->spesifikasi}}</p>
-      <p class="card-text">{{$item->harga}}</p>
-      <p><span class="badge text-bg-primary">{{$item->jenis}}</span></p>
-      <a href="#" class="card-link">Edit</a>
-    <a href="#" class="card-link">Hapus</a>
+    @foreach($items as $item)
+    <div class="card" style="margin-bottom:10px;">
+      <img src="{{url(Storage::url($item->foto_paket1))}}" class="card-img-top" >
+      <div class="card-body">
+        <h5 class="card-title">{{$item->nama_paket}}</h5>
+        <p class="card-text">{{$item->spesifikasi}}</p>
+        <p class="card-text">{{$item->harga}}</p>
+        <p><span class="badge text-bg-primary">{{$item->jenis}}</span></p>
+        <a href="#" class="card-link">Edit</a>
+        <a href="#" class="card-link">Hapus</a>
+      </div>
     </div>
-  </div>
     <!-- <div class="thumbnail">
       <img src="/assets/img/bg-paket2.jpg" alt="Paket">
       <div class="caption">
@@ -25,7 +25,7 @@
         <p><a href="#" class="btn btn-warning" role="button">Edit</a> <a href="#" class="btn btn-danger" role="button">Delete</a></p>
       </div>
     </div> -->
-  @endforeach
+    @endforeach
   </div>
 </div>
 

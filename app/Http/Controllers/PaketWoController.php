@@ -5,14 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\PaketWo;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class PaketWoController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         // if(request('author')) {
@@ -20,7 +16,7 @@ class PaketWoController extends Controller
         //     $title = ' by ' . $author->name;
         // }
 
-        $items = PaketWo::where('status', 'aktif')->paginate(10);
+        $items = PaketWo::where('status', 'aktif')->get();
 
         return view('wo.packets.index', compact('items'));
     }
@@ -39,75 +35,55 @@ class PaketWoController extends Controller
             "paket" => $paket
         ]);
     }
-    
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function form()
     {
-        $title = 'Create Packet';
-        return view('wo.packets.create', ['title' => $title]);
+        $title = 'Tambah paket';
+        return view('wo.packets.form', ['title' => $title]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function add(Request $request)
     {
-        dd($request);
         
         $validatedData = $request->validate([
-            'id_user'=>'required',
-            'nama_pake'=>'required|max:200',
+            'nama_paket'=>'required|max:100',
             'jenis'=>'required',
             'harga'=>'required|max:200',
-            'spesifikasi'=>'max:255',
+            'spesifikasi'=>'required|max:255',
             'status'=>'required',
-            'foto_paket' => 'required',
+            'foto_paket' => 'required|image|mimes:jpg,png,jpeg',
         ]);
-        
-        PaketWo::create($validatedData);
 
-        return redirect('/wo/')->with('succes','Paket WO Inserted');
-    
+        // upload gambar
+        $name_img = time() . '_' . $request->file('foto_paket')->getClientOriginalName();
+        $path = $request->file('foto_paket')->storeAs('public/img',$name_img);
+        // end upload gambar
+        
+        $input = PaketWo::create([ /*upload data ke model*/
+            'id_user'=> Auth::user()->id,
+            'nama_paket'=>$request->input('nama_paket'),
+            'jenis'=>$request->input('jenis'),
+            'harga'=>$request->input('harga'),
+            'spesifikasi'=>$request->input('spesifikasi'),
+            'status'=>$request->input('status'),
+            'foto_paket1' => $path,
+        ]);
+
+        // redirect ke halaman dengan session success
+        return redirect()->route('wo.paket.form_tambah')->with('success','Paket berhasil di tambahkan');
+        
     }
 
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\PaketWo  $paketWo
-     * @return \Illuminate\Http\Response
-     */
     public function edit(PaketWo $paketWo)
     {
         //
-    }
+    } 
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\PaketWo  $paketWo
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, PaketWo $paketWo)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\PaketWo  $paketWo
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(PaketWo $paketWo)
     {
         //
