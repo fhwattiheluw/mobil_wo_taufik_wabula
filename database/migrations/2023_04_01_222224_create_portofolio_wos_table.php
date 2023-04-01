@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class PortofolioWo extends Migration
+class CreatePortofolioWosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,12 +14,14 @@ class PortofolioWo extends Migration
     public function up()
     {
         Schema::create('portofolio_wo', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('id_user')->constrained('users');
-            $table->string('nama_portofolio')->nullable(false);
-            $table->text('deskripsi')->nullable(true);
-            $table->string('foto_portofolio')->nullable(false);        
-            $table->timestamps();
+          $table->id();
+          $table->foreignId('id_paket_wo')->constrained('paket_wo');
+          $table->string('nama_acara')->nullable(false);
+          $table->date('tanggal_acara')->nullable(false);
+          $table->string('lokasi')->nullable(false);
+          $table->text('keterangan')->nullable(true);
+          $table->string('foto')->nullable(false);
+          $table->timestamps();
         });
     }
 

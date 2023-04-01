@@ -2,19 +2,18 @@
 
 namespace App\Models;
 
-use App\Models\User;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+use App\Models\PaketWo;
 
 class PortofolioWo extends Model
 {
-    use HasFactory;
-    protected $table = 'portofolio_wo';
+    protected $table = "portofolio_wo";
 
     protected $guarded = ['id'];
 
-    public function user()
+    public function paket_wo()
     {
-        return $this->belongsTo(User::class, 'id_user');
+      return $this->belongsTo(PaketWo::class, 'id_paket_wo');
     }
 }
