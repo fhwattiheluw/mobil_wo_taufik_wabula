@@ -1,6 +1,36 @@
 @extends('wo.layout')
 
 @section('content')
+
+<!-- jika berhasil save data -->
+@if(Session::has('succes'))
+<div class="position-fixed z-3">
+  <div class="toast align-items-center text-bg-success border-0 fade show  " role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="d-flex">
+      <div class="toast-body">
+        {{Session::get('succes')}}
+      </div>
+      <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+  </div>
+</div>
+@endif
+
+@if(Session::has('error'))
+<div class="position-fixed z-3">
+  <div class="toast align-items-center text-bg-danger border-0 fade show " role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="d-flex">
+      <div class="toast-body">
+        {{Session::get('error')}}
+      </div>
+      <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+  </div>
+</div>
+@endif
+<!-- end jika berhasil save data -->
+
+
 <a class="btn btn-primary float-add shadow " href="{{route('wo.paket.create')}} ">Add</a>
 
 <div class="row">
@@ -25,5 +55,5 @@
     </div>
     @endforeach
   </div>
-</div> 
+</div>
 @endsection
