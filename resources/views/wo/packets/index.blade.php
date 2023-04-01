@@ -6,10 +6,8 @@
 <div class="row">
   <div class="col">
     @foreach($items as $item)
-    <p>{{url(Storage::url('public/img/ica.jpeg'))}}</p>
     <div class="card" style="margin-bottom:10px;">
-      <p>{{url(public_path('storage\img'))}}</p>
-      <img src="{{url(Storage::url('public/img/ica.jpeg'))}}" class="card-img-top" >
+      <img src="{{url(Storage::url('public/img/'.$item->foto_paket))}}" class="card-img-top" >
       <!-- <img src="{{url(Storage::url($item->foto_paket))}}" class="card-img-top" > -->
       <div class="card-body">
         <h5 class="card-title">{{$item->nama_paket}}</h5>
