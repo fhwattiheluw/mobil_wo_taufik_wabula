@@ -66,10 +66,14 @@ class PaketWoController extends Controller
             'status'=>'required',
             'foto_paket' => 'required|image|mimes:png,jpg,jpeg',
         ]);
-        $namaGambar = $image->hashName();
-        $validatedData['foto_paket'] = $namaGambar;
+        
+        $image->storePubliclyAs('img', $image->getClientOriginalName(), 'public');
+        
+        dd('OK '.$image->getClientOriginalName());
 
-        $image->storeAs('public/assets', $namaGambar);
+        $validatedData['foto_paket'] = $image->getClientOriginalName();
+
+        // $image->storeAs('public', $namaGambar);
 
         $paketwo = PaketWo::create($validatedData);
 
@@ -107,7 +111,7 @@ class PaketWoController extends Controller
         $this->validate($request, [
             'nama_paket'=>'required|max:200',
             'jenis'=>'required',
-            'harga'=>'required|max:200',
+            'harga'=>'required|max:10',
             'spesifikasi'=>'max:255',
             'status'=>'required',
         ]);

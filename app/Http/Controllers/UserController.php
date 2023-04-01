@@ -53,6 +53,6 @@ class UserController extends Controller
 
         $request->session()->regenerateToken();
 
-        return redirect('/wo');
+        return redirect()->route('login');
     }
 }

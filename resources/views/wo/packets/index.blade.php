@@ -7,7 +7,9 @@
   <div class="col">
     @foreach($items as $item)
     <div class="card" style="margin-bottom:10px;">
-      <img src="{{url(Storage::url($item->foto_paket))}}" class="card-img-top" >
+      <p>{{url(public_path('storage\img'))}}</p>
+      <img src="{{url(Storage::url('public/img/ica.jpeg'))}}" class="card-img-top" >
+      <!-- <img src="{{url(Storage::url($item->foto_paket))}}" class="card-img-top" > -->
       <div class="card-body">
         <h5 class="card-title">{{$item->nama_paket}}</h5>
         <p class="card-text">{{$item->spesifikasi}}</p>
