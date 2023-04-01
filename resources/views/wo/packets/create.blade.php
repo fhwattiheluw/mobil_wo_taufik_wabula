@@ -3,7 +3,7 @@
 @section('content')
 <h3>Add Data Packet</h3>
 <form class="form" action="" method="post" enctype="multipart/form-data">
-    @csrf
+  @csrf
 
   <div class="form-group">
     <div class="col-sm-10">
@@ -19,19 +19,19 @@
   <div class="form-group">
     <label for="jenis" class="col-sm-2 control-label">Jenis</label>
     <div class="radio-inline col-sm-10">
-        <label>
-            <input type="radio" name="jenis" id="silver" value="silver">Silver
-        </label>
+      <label>
+        <input type="radio" name="jenis" id="silver" value="silver">Silver
+      </label>
     </div>
     <div class="radio-inline col-sm-10">
-        <label>
-            <input type="radio" name="jenis" id="gold" value="gold">Gold
-        </label>
+      <label>
+        <input type="radio" name="jenis" id="gold" value="gold">Gold
+      </label>
     </div>
     <div class="radio-inline col-sm-10">
-        <label>
-            <input type="radio" name="jenis" id="paltinum" value="platinum">Platinum
-        </label>
+      <label>
+        <input type="radio" name="jenis" id="paltinum" value="platinum">Platinum
+      </label>
     </div>
   </div>
   <div class="form-group">
@@ -49,14 +49,14 @@
   <div class="form-group">
     <label for="status" class="col-sm-2 control-label">Status</label>
     <div class="radio-inline col-sm-10">
-        <label>
-            <input type="radio" name="status" id="aktif" value="aktif" checked>Aktif
-        </label>
+      <label>
+        <input type="radio" name="status" id="aktif" value="aktif" checked>Aktif
+      </label>
     </div>
     <div class="radio-inline col-sm-10">
-        <label>
-            <input type="radio" name="status" id="nonaktif" value="nonaktif">Non Aktif
-        </label>
+      <label>
+        <input type="radio" name="status" id="nonaktif" value="nonaktif">Non Aktif
+      </label>
     </div>
   </div>
   <div class="form-group">
@@ -70,4 +70,3 @@
   </div>
 </form>
 @endsection
-

@@ -16,7 +16,7 @@ class PaketWoController extends Controller
      */
     public function index()
     {
-        $items = PaketWo::where('status', 'aktif')->paginate(10);
+        $items = PaketWo::where('status', 'aktif')->get();
 
         return view('wo.packets.index', compact('items'));
     }
@@ -35,7 +35,7 @@ class PaketWoController extends Controller
             "paket" => $paket
         ]);
     }
-    
+
 
     /**
      * Show the form for creating a new resource.
@@ -44,8 +44,8 @@ class PaketWoController extends Controller
      */
     public function create()
     {
-        $title = 'Create Packet';
-        return view('wo.packets.create', ['title' => $title]);
+        $title = 'Tambah paket';
+        return view('wo.packets.form', ['title' => $title]);
     }
 
     /**
@@ -55,7 +55,7 @@ class PaketWoController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {   
+    {
         $image = $request->file('foto_paket');
         $validatedData = $request->validate([
             'id_user'=>'required',
@@ -66,14 +66,12 @@ class PaketWoController extends Controller
             'status'=>'required',
             'foto_paket' => 'required|image|mimes:png,jpg,jpeg',
         ]);
-        
+
         $image->storePubliclyAs('img', $image->getClientOriginalName(), 'public');
-        
+
         // dd('OK '.$image->getClientOriginalName());
 
         $validatedData['foto_paket'] = $image->getClientOriginalName();
-
-        // $image->storeAs('public', $namaGambar);
 
         $paketwo = PaketWo::create($validatedData);
 
@@ -115,7 +113,7 @@ class PaketWoController extends Controller
             'spesifikasi'=>'max:255',
             'status'=>'required',
         ]);
-        
+
 
         $paketWo = PaketWo::findOrFail($request->id);
         if($request->foto_paket == ""){
@@ -132,7 +130,7 @@ class PaketWoController extends Controller
             ]);
             $image_name = $image->hashName();
             $image->store('/assets');
-            
+
             $paketWo->update([
                 'nama_paket'=> $request->nama_paket,
                 'jenis'=> $request->jenis,
@@ -148,7 +146,7 @@ class PaketWoController extends Controller
         }else{
             return redirect()->route('wo.paket')->with(['error' => 'gagal update data']);
         }
-        
+
     }
 
     /**
@@ -161,7 +159,7 @@ class PaketWoController extends Controller
     {
         $paketWo = PaketWo::findOrFail($request->id);
         $paketWo->delete();
-        
+
         if($paketWo){
             return redirect()->route('wo.paket')->with(['success' => 'Berhasil hapus data']);
         }else{
