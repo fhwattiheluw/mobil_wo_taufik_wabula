@@ -29,7 +29,7 @@ Route::get('/wo/login', 'App\Http\Controllers\UserController@showLoginForm')->na
 Route::post('/wo/login', [UserController::class, 'login']);
 Route::get('/wo/logout', [UserController::class, 'logout'])->name('wo.logout');
 
-// khusus untuk WO Paket
+// khusus untuk login
 Route::middleware(['auth'])->group(function () {
         Route::get('/wo/home', [WoController::class, 'index'])->name('wo.home');
         Route::get('/wo/packets', [PaketWoController::class, 'index'])->name('wo.paket');

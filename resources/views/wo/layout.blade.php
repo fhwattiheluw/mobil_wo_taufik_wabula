@@ -5,20 +5,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Admin WO</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
   @yield('css')
   <style>
-    .float-add{
-      border-radius: 100%;
-      position: fixed;
-      padding: 15px;
-      bottom: 0;
-      right: 0;
-      margin-right: 10px;
-      margin-bottom: 30px;
-      z-index: 1000;
-    }
+  .float-add{
+    border-radius: 100%;
+    position: fixed;
+    padding: 15px;
+    bottom: 0;
+    right: 0;
+    margin-right: 10px;
+    margin-bottom: 30px;
+    z-index: 1000;
+  }
   </style>
 </head>
 <body style="padding-top:50px;">
@@ -46,7 +46,7 @@
               <a class="nav-link" href="{{route('wo.portofolio')}}">Portofolio</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Portofolio</a>
+              <a class="nav-link" href="#">Profil</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{{route('wo.logout') }}">Log out</a>
@@ -57,11 +57,22 @@
     </div>
   </nav>
 
+  <!-- tempat membuat konten  -->
+<div class="container">
+  @yield('content')
+</div>
+<!-- end tempat membuat konten  -->
 
-  <div class="container" style="padding-top: 20px;">
-    @yield('content')
+  <!-- footer-->
+  <div class="row" style="margin-top:10px;">
+    <div class="col text-center" style="position:relative;bottom: 0px;">
+      <p>by taufik wabula</p>
+    </div>
   </div>
+  <!-- end footer -->
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
