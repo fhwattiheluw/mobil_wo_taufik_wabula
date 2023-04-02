@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\PortofolioWo;
+use App\Models\PaketWo;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PortofolioWoController extends Controller
 {
@@ -15,7 +17,14 @@ class PortofolioWoController extends Controller
      */
     public function index()
     {
-        //
+      $title = 'Home Portofolio';
+      // $items = PortofolioWo::find(Auth::user()->id)->get();
+      $items = PaketWo::where('id_user', Auth::user()->id)->get();
+        // $items = PaketWo::all();
+
+        // dd($items->all());
+
+      return view('wo.portofolio.index', ['title'=>$title, 'items' => $items]);
     }
 
     /**
@@ -23,9 +32,9 @@ class PortofolioWoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
-        //
+        dd($id);
     }
 
     /**
@@ -45,9 +54,14 @@ class PortofolioWoController extends Controller
      * @param  \App\Models\PortofolioWo  $portofolioWo
      * @return \Illuminate\Http\Response
      */
-    public function show(PortofolioWo $portofolioWo)
+    public function show(PortofolioWo $portofolioWo, $id)
     {
-        //
+      $title = 'Detail Portofolio';
+      $item = $portofolioWo->where('id',$id)->get();
+
+      // dd($item->all());
+
+      return view('wo.portofolio.show', compact('title','item'));
     }
 
     /**

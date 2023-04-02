@@ -8,7 +8,7 @@ use App\Http\Controllers\WoController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PortofolioWoController;
 
-// ROUTE AWAL 
+// ROUTE AWAL
 
 Route::get('/', function () {
         return view('wo/login');
@@ -30,7 +30,7 @@ Route::post('/wo/login', [UserController::class, 'login']);
 Route::get('/wo/logout', [UserController::class, 'logout'])->name('wo.logout');
 
 // khusus untuk WO Paket
-Route::middleware(['auth'])->group(function () {  
+Route::middleware(['auth'])->group(function () {
         Route::get('/wo/home', [WoController::class, 'index'])->name('wo.home');
         Route::get('/wo/packets', [PaketWoController::class, 'index'])->name('wo.paket');
         Route::get('/wo/packets/create', [PaketWoController::class, 'create'])->name('wo.paket.create');
@@ -43,7 +43,13 @@ Route::middleware(['auth'])->group(function () {
 
 // Admin WO Portofolio
 Route::middleware(['auth'])->group(function (){
-        Route::get('/wo/portofolio', [PortofolioWoController::class, 'index'])->name('portofolio.home');
+        Route::get('/wo/portofolio', [PortofolioWoController::class, 'index'])->name('wo.portofolio');
+        Route::get('/wo/portofolio/{id}/create', [PortofolioWoController::class, 'create'])->name('wo.portofolio.create');
+        Route::post('/wo/portofolio/{id}/create', [PortofolioWoController::class, 'store']);
+        Route::get('/wo/portofolio/{id}', [PortofolioWoController::class, 'show'])->name('wo.portofolio.show');
+        Route::get('/wo/portofolio/{id}/edit', [PortofolioWoController::class, 'edit'])->name('wo.portofolio.edit');
+        Route::put('/wo/portofolio/{id}/edit', [PortofolioWoController::class, 'update']);
+        Route::delete('/wo/portofolio/{id}/delete', [PortofolioWoController::class, 'destroy'])->name('wo.portofolio.delete');
 });
 
 Route::get('/paket-wo', [PaketWoController::class, 'index'])->name('paket-wo.index');
@@ -59,4 +65,3 @@ Route::get('/paket-wo/{paket:id}', [PaketWoController::class, 'show'])->name('pa
 //     Route::put('/{id}', [PaketWoController::class, 'update'])->name('paket-wo.update');
 //     Route::delete('/{id}', [PaketWoController::class, 'destroy'])->name('paket-wo.destroy');
 // });
-
