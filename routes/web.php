@@ -7,7 +7,7 @@ use App\Http\Controllers\userHomeController;
 use App\Http\Controllers\WoController;
 use App\Http\Controllers\UserController;
 
-// ROUTE AWAL 
+// ROUTE AWAL
 
 Route::get('/', function () {
         return view('wo/login');
@@ -31,7 +31,7 @@ Route::post('/wo/login', [UserController::class, 'login']);
 Route::get('/wo/logout', [UserController::class, 'logout'])->name('wo.logout');
 
 // khusus untuk login
-Route::middleware(['auth'])->group(function () {  
+Route::middleware(['auth'])->group(function () {
         Route::get('/wo/home', [WoController::class, 'index'])->name('wo.home');
         Route::get('/wo/packets', [PaketWoController::class, 'index'])->name('wo.paket');
         Route::get('/wo/packets/create', [PaketWoController::class, 'create'])->name('wo.paket.create');
@@ -55,4 +55,3 @@ Route::get('/paket-wo/{paket:id}', [PaketWoController::class, 'show'])->name('pa
 //     Route::put('/{id}', [PaketWoController::class, 'update'])->name('paket-wo.update');
 //     Route::delete('/{id}', [PaketWoController::class, 'destroy'])->name('paket-wo.destroy');
 // });
-
