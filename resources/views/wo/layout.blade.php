@@ -13,8 +13,8 @@
     border-radius: 100%;
     position: fixed;
     padding: 15px;
-    bottom: 0;
-    right: 0;
+    bottom: 0px;
+    right: 10px;
     margin-right: 10px;
     margin-bottom: 30px;
     z-index: 1000;
@@ -64,9 +64,11 @@
 <!-- end tempat membuat konten  -->
 
   <!-- footer-->
-  <div class="row" style="margin-top:10px;">
-    <div class="col text-center" style="position:relative;bottom: 0px;">
-      <p>by taufik wabula</p>
+  <div class="container">
+    <div class="row" style="margin-top:10px;">
+      <div class="col text-center" style="position:relative;bottom: 0px;">
+        <p>by taufik wabula</p>
+      </div>
     </div>
   </div>
   <!-- end footer -->

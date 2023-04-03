@@ -29,8 +29,6 @@
 </div>
 @endif
 <!-- end jika berhasil save data -->
-
-
 <a class="btn btn-primary float-add shadow " href="{{route('wo.paket.create')}} ">Add</a>
 
 <div class="row">
@@ -40,16 +38,17 @@
       <img src="{{url(Storage::url('public/img/'.$item->foto_paket))}}" class="card-img-top" >
       <!-- <img src="{{url(Storage::url($item->foto_paket))}}" class="card-img-top" > -->
       <div class="card-body">
-        <h5 class="card-title">{{$item->nama_paket}}</h5>
+        <h5 class="card-title">{{$item->nama_paket}}</h5><span class="badge text-bg-primary">{{$item->jenis}}</span>
         <p class="card-text">{{$item->spesifikasi}}</p>
         <p class="card-text">{{$item->harga}}</p>
-        <p><span class="badge text-bg-primary">{{$item->jenis}}</span></p>
-        <a href="{{route('wo.edit',$item->id)}}" class="card-link">Edit</a>
+
+        <!-- <a href="{{route('wo.delete',$item->id)}}" class="card-link">Delete</a> -->
         <form action="{{route('wo.delete',$item->id)}}" method="post">
           @csrf
           @method('DELETE')
           <input type="hidden" name="id" value="{{$item->id}}">
           <input type="submit" class="btn btn-danger" value="Delete">
+          <a href="{{route('wo.edit',$item->id)}}" type="button" class="btn btn-info">Edit</a>
         </form>
       </div>
     </div>
