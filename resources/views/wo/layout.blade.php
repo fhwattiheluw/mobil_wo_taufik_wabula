@@ -58,7 +58,7 @@
   </nav>
 
   <!-- tempat membuat konten  -->
-<div class="container">
+<div class="container cont-main" style="margin-top:20px;">
   @yield('content')
 </div>
 <!-- end tempat membuat konten  -->
@@ -72,9 +72,6 @@
     </div>
   </div>
   <!-- end footer -->
-
-
-
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

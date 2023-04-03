@@ -29,10 +29,22 @@
 </div>
 @endif
 <!-- end jika berhasil save data -->
+
+<!-- tombol add -->
 <a class="btn btn-primary float-add shadow " href="{{route('wo.paket.create')}} ">Add</a>
+<!-- end tombol add -->
 
 <div class="row">
   <div class="col">
+    <!-- cek jika tidak ada data  -->
+    @if($items->count() === 0)
+    <div class="alert alert-secondary" role="alert">
+      <p>Anda belum menambahkan data paket!</p>
+    </div>
+    @endif
+    <!-- end cek jika tidak ada data  -->
+
+    <!-- menampilkan data paket -->
     @foreach($items as $item)
     <div class="card" style="margin-bottom:10px;">
       <img src="{{url(Storage::url('public/img/'.$item->foto_paket))}}" class="card-img-top" >
@@ -53,6 +65,9 @@
       </div>
     </div>
     @endforeach
+    <!-- end menampilkan data paket -->
+
+
   </div>
 </div>
 @endsection
