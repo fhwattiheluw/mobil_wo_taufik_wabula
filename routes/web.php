@@ -6,6 +6,7 @@ use App\Http\Controllers\PaketWoController;
 use App\Http\Controllers\userHomeController;
 use App\Http\Controllers\WoController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\PortofolioWoController;
 
 // ROUTE AWAL
 
@@ -23,8 +24,6 @@ Route::get('user/wo/porto/{id_wo}', [WoController::class, 'porto_wo'])->name('us
 Route::get('user/wo/paket/{id_wo}', [WoController::class, 'paket_wo'])->name('user.wo.paket');
 Route::get('user/wo/paket/{id_wo}/{paket}', [WoController::class, 'view_paket'])->name('user.wo.paket.list');
 
-
-
 // Halaman admin WO
 Route::get('/wo/login', 'App\Http\Controllers\UserController@showLoginForm')->name('login');
 Route::post('/wo/login', [UserController::class, 'login']);
@@ -41,6 +40,17 @@ Route::middleware(['auth'])->group(function () {
         Route::delete('/wo/packets/{id}/delete', [PaketWoController::class, 'destroy'])->name('wo.delete');
 });
 
+
+// Admin WO Portofolio
+Route::middleware(['auth'])->group(function (){
+        Route::get('/wo/portofolio', [PortofolioWoController::class, 'index'])->name('wo.portofolio');
+        Route::get('/wo/portofolio/{id}/create', [PortofolioWoController::class, 'create'])->name('wo.portofolio.create');
+        Route::post('/wo/portofolio/{id}/create', [PortofolioWoController::class, 'store']);
+        Route::get('/wo/portofolio/{id}', [PortofolioWoController::class, 'show'])->name('wo.portofolio.show');
+        Route::get('/wo/portofolio/{id}/edit', [PortofolioWoController::class, 'edit'])->name('wo.portofolio.edit');
+        Route::put('/wo/portofolio/{id}/edit', [PortofolioWoController::class, 'update']);
+        Route::delete('/wo/portofolio/{id}/delete', [PortofolioWoController::class, 'destroy'])->name('wo.portofolio.delete');
+});
 
 Route::get('/paket-wo', [PaketWoController::class, 'index'])->name('paket-wo.index');
 Route::get('/paket-wo/{paket:id}', [PaketWoController::class, 'show'])->name('paketwo.show');

@@ -43,7 +43,7 @@
               <a class="nav-link" href="{{route('wo.paket')}} ">Paket</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Portofolio</a>
+              <a class="nav-link" href="{{route('wo.portofolio')}}">Portofolio</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Profil</a>

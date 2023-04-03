@@ -6,6 +6,7 @@ use App\Models\PaketWo;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Auth\Events\Validated;
+use Illuminate\Support\Facades\Auth;
 
 class PaketWoController extends Controller
 {
@@ -16,7 +17,7 @@ class PaketWoController extends Controller
      */
     public function index()
     {
-        $items = PaketWo::where('status', 'aktif')->get();
+        $items = PaketWo::where(['id_user'=>Auth::user()->id,'status'=> 'aktif'])->get();
 
         return view('wo.packets.index', compact('items'));
     }
