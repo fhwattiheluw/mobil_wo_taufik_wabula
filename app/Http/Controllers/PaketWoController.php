@@ -129,8 +129,9 @@ class PaketWoController extends Controller
             $this->validate($request, [
                 'foto_paket'     => 'required|image|mimes:png,jpg,jpeg',
             ]);
-            $image_name = $image->hashName();
-            $image->store('/assets');
+            // $image_name = $image->hashName();            
+            $image->storePubliclyAs('img', $image->getClientOriginalName(), 'public');
+            // $image->store('/assets');
 
             $paketWo->update([
                 'nama_paket'=> $request->nama_paket,
@@ -138,7 +139,7 @@ class PaketWoController extends Controller
                 'harga'=> $request->harga,
                 'spesifikasi'=> $request->spesifikasi,
                 'status'=> $request->status,
-                'foto_paket' => $image_name
+                'foto_paket' => $image->getClientOriginalName()
             ]);
         }
 

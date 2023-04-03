@@ -10,9 +10,7 @@ use App\Http\Controllers\PortofolioWoController;
 
 // ROUTE AWAL
 
-Route::get('/', function () {
-        return view('wo/login');
-})->name('login');
+Route::get('/', function () {return redirect(route('user.home'));});
 
 // Halaman User
 Route::get('user/home', [userHomeController::class, 'index'])->name('user.home');

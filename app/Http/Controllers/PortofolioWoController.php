@@ -34,7 +34,8 @@ class PortofolioWoController extends Controller
      */
     public function create($id)
     {
-        dd($id);
+      $title = 'Create Portofolio';
+        return view('wo.portofolio.create', ['title'=>$title, 'id' => $id]);
     }
 
     /**
@@ -45,7 +46,7 @@ class PortofolioWoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        dd($request->all());
     }
 
     /**
