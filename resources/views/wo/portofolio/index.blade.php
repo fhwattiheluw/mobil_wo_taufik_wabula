@@ -17,11 +17,12 @@
 </div>
 
 <div class="row">
-  <div class="alert alert-secondary" role="alert">
-    <p>Anda belum menambahkan data paket!</p>
-  </div>
-
   <div class="col">
+
+    <div class="alert alert-secondary" role="alert">
+      <p>Anda belum menambahkan data paket!</p>
+    </div>
+
     @for($i = 0; $i<=10; $i++)
     <div class="card" style="margin-bottom: 10px;">
       <img src="/assets/img/paket1.jpg" class="card-img-top">
@@ -36,6 +37,7 @@
       </div>
     </div>
     @endfor
+    
   </div>
 </div>
 
