@@ -15,6 +15,7 @@ class CreatePortofolioWosTable extends Migration
     {
         Schema::create('portofolio_wo', function (Blueprint $table) {
           $table->id();
+          $table->foreignId('id_user')->constrained('users');
           $table->foreignId('id_paket_wo')->constrained('paket_wo');
           $table->string('nama_acara')->nullable(false);
           $table->date('tanggal_acara')->nullable(false);

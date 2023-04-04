@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\PortofolioWo;
 use App\Models\PaketWo;
 use App\Http\Controllers\Controller;
+use Illuminate\Contracts\Support\ValidatedData;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -19,11 +20,9 @@ class PortofolioWoController extends Controller
     {
       $title = 'Home Portofolio';
       // $items = PortofolioWo::find(Auth::user()->id)->get();
-      $items = PaketWo::where('id_user', Auth::user()->id)->get();
-        // $items = PaketWo::all();
-
-        // dd($items->all());
-
+      
+      $items = PortofolioWo::where('id_user', Auth::user()->id)->get();
+ 
       return view('wo.portofolio.index', ['title'=>$title, 'items' => $items]);
     }
 
@@ -32,10 +31,11 @@ class PortofolioWoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create($id)
+    public function create()
     {
       $title = 'Create Portofolio';
-        return view('wo.portofolio.create', ['title'=>$title, 'id' => $id]);
+      $pakets = PaketWo::where('id_user', Auth::user()->id)->get();
+      return view('wo.portofolio.create', ['title'=>$title, 'pakets' => $pakets]);
     }
 
     /**
@@ -46,7 +46,32 @@ class PortofolioWoController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->all());
+        $image = $request->file('foto');
+        $validatedData = $request->validate([
+            'id_user'=>'required',
+            'id_paket_wo'=>'required',
+            'nama_acara'=>'required',
+            'tanggal_acara'=>'required',
+            'lokasi'=>'required',
+            'keterangan'=>'required|max:255',
+            'foto' => 'required|image|mimes:png,jpg,jpeg'
+        ]);
+
+        if ($image){
+          $image->storePubliclyAs('img', $image->getClientOriginalName(), 'public');
+
+          $validatedData['foto'] = $image->getClientOriginalName();
+        }
+        
+
+        $porto = PortofolioWo::create($validatedData);
+
+        if ($porto){
+           return redirect(route('wo.portofolio'))->with('success', 'Berhasil tambah data');
+        }else{
+          return redirect(route('wo.portofolio'))->with(['error' => 'Gagal']);
+        }
+
     }
 
     /**
@@ -71,9 +96,12 @@ class PortofolioWoController extends Controller
      * @param  \App\Models\PortofolioWo  $portofolioWo
      * @return \Illuminate\Http\Response
      */
-    public function edit(PortofolioWo $portofolioWo)
+    public function edit(PortofolioWo $portofolioWo, $id)
     {
-        //
+      $title = "Edit Portofolio";
+        $item = $portofolioWo->find($id);
+
+        return view('wo.portofolio.edit', ['title'=>$title, 'item' => $item]);
     }
 
     /**

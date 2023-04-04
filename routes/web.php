@@ -42,8 +42,8 @@ Route::middleware(['auth'])->group(function () {
 // Admin WO Portofolio
 Route::middleware(['auth'])->group(function (){
         Route::get('/wo/portofolio', [PortofolioWoController::class, 'index'])->name('wo.portofolio');
-        Route::get('/wo/portofolio/{id}/create', [PortofolioWoController::class, 'create'])->name('wo.portofolio.create');
-        Route::post('/wo/portofolio/{id}/create', [PortofolioWoController::class, 'store']);
+        Route::get('/wo/portofolio/create', [PortofolioWoController::class, 'create'])->name('wo.portofolio.create');
+        Route::post('/wo/portofolio/create', [PortofolioWoController::class, 'store']);
         Route::get('/wo/portofolio/{id}', [PortofolioWoController::class, 'show'])->name('wo.portofolio.show');
         Route::get('/wo/portofolio/{id}/edit', [PortofolioWoController::class, 'edit'])->name('wo.portofolio.edit');
         Route::put('/wo/portofolio/{id}/edit', [PortofolioWoController::class, 'update']);

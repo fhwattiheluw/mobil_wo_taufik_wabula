@@ -16,4 +16,8 @@ class PortofolioWo extends Model
     {
       return $this->belongsTo(PaketWo::class, 'id_paket_wo');
     }
+    public function user()
+    {
+      return $this->belongsTo(User::class);
+    }
 }

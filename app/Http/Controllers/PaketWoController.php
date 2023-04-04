@@ -70,8 +70,6 @@ class PaketWoController extends Controller
 
         $image->storePubliclyAs('img', $image->getClientOriginalName(), 'public');
 
-        // dd('OK '.$image->getClientOriginalName());
-
         $validatedData['foto_paket'] = $image->getClientOriginalName();
 
         $paketwo = PaketWo::create($validatedData);

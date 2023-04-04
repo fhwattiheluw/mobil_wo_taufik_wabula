@@ -3,7 +3,7 @@
 @section('content')
 
 <!-- tombol add -->
-<a class="btn btn-primary float-add shadow " href="#">Add</a>
+<a class="btn btn-primary float-add shadow " href="{{route('wo.portofolio.create')}}">Add</a>
 <!-- end tombol add -->
 
 <div class="row" style="margin-bottom:10px;">
@@ -23,49 +23,22 @@
       <p>Anda belum menambahkan data paket!</p>
     </div>
 
-    @for($i = 0; $i<=10; $i++)
+    @foreach($items as $item)
     <div class="card" style="margin-bottom: 10px;">
-      <img src="/assets/img/paket1.jpg" class="card-img-top">
-      <div class="card-body">
-        <h5 class="card-title">nama acara</h5>
-        <h6 class="card-subtitle mb-2 text-body-secondary">nama paket</h6>
-        <p class="card-text">tanggal acara : </p>
-        <p class="card-text">lokasi : </p>
-        <p class="card-text">keterangan : </p>
-        <a href="#" class="card-link">Edit</a>
-        <a href="#" class="card-link">Hapus</a>
-      </div>
+        <img src="{{url(Storage::url('public/img/'.$item->foto))}}" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">{{$item->nama_acara}}</h5>
+          <h6 class="card-subtitle mb-2 text-body-secondary">{{$item->paket_wo->nama_paket}}</h6>
+          <p class="card-text">tanggal acara : {{$item->tanggal_acara}}</p>
+          <p class="card-text">lokasi : {{$item->lokasi}}</p>
+          <p class="card-text">keterangan : {{$item->keterangan}}</p>
+          <a href="{{route('wo.portofolio.edit',$item->id)}}" class="card-link">Edit</a>
+          <a href="#" class="card-link">Hapus</a>
+        </div>
     </div>
-    @endfor
+   @endforeach
     
   </div>
 </div>
-
-
-
-
-
-
-
-
-<!-- <p>
-@foreach($items as $item)
-ID User: {{$item->id_user}}<br>
-Nama Paket: {{$item->nama_paket}} <a href="{{route('wo.portofolio.create', ['id'=>$item->id_user])}}">Add Portofolio</a> <br>
-<ul>
-@foreach($item->portofolio_wo as $port)
-<li>{{$port->id}}</li>
-<li>{{$port->nama_acara}}</li>
-<li>{{$port->tanggal_acara}}</li>
-<li>{{$port->lokasi}}</li>
-<li>{{$port->keterangan}}</li>
-<li>{{$port->foto}}</li>
-<br>
-<a href="#">Edit</a> | <a href="#">Delete</a>
-@endforeach
-</ul>
-<hr>
-@endforeach
-</p> -->
 
 @endsection

@@ -26,6 +26,6 @@ class PaketWo extends Model
 
     public function portofolio_wo()
     {
-      return $this->hasMany(PortofolioWo::class,'id_paket_wo');
+      return $this->hasMany(PortofolioWo::class);
     }
 }

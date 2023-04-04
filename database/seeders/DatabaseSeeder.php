@@ -203,6 +203,7 @@ class DatabaseSeeder extends Seeder
 
         //seeder data portofolio
         DB::table('portofolio_wo')->insert([
+          'id_user' => '2',
           'id_paket_wo' => '1',
           'nama_acara' => 'Pernikahan Dini',
           'tanggal_acara' => '2023-04-02',
@@ -211,6 +212,7 @@ class DatabaseSeeder extends Seeder
           'foto' => 'porto1.jpg'
         ]);
         DB::table('portofolio_wo')->insert([
+          'id_user' => '1',
           'id_paket_wo' => '1',
           'nama_acara' => 'Aqikahan Ananda Bilqis',
           'tanggal_acara' => '2023-03-02',
@@ -219,6 +221,7 @@ class DatabaseSeeder extends Seeder
           'foto' => 'porto1.jpg'
         ]);
         DB::table('portofolio_wo')->insert([
+          'id_user' => '2',
           'id_paket_wo' => '2',
           'nama_acara' => 'Pernikahan Ani dan Dani',
           'tanggal_acara' => '2023-04-02',
@@ -227,7 +230,8 @@ class DatabaseSeeder extends Seeder
           'foto' => 'porto1.jpg'
         ]);
         DB::table('portofolio_wo')->insert([
-          'id_paket_wo' => '2',
+          'id_user' => '2',
+          'id_paket_wo' => '3',
           'nama_acara' => 'Tasyakuran Kapolda',
           'tanggal_acara' => '2023-04-02',
           'lokasi' => 'Gedung Ashari',

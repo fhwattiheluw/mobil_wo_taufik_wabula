@@ -2,14 +2,15 @@
 
 @section('content')
 <h3>{{$title}}</h3>
-<form class="form" action="{{route('wo.portofolio.create')}}" method="post" enctype="multipart/form-data">
+<form class="form" action="{{route('wo.portofolio.edit', $item->id)}}" method="post" enctype="multipart/form-data">
   @csrf
-  <input type="hidden" name="id_user" value="{{Auth::user()->id}}">
+  @method('put')
+  <input type="hidden" name="id_user" value="{{$item->id}}">
   Paket
-  <select name="id_paket_wo" id="id_paket_wo">
+  <select name="id_paket" id="id_paket">
     <option value="">Pilih paket wo...</option>
     @foreach($pakets as $paket)
-      <option value="{{$paket->id}}">{{$paket->nama_paket}}</option>
+      <option value="{{$paket->id}}" @if($item->id_paket_wo == $paket->id) selected @endif>{{$paket->nama_paket}}</option>
     @endforeach
   </select> 
   <br>
