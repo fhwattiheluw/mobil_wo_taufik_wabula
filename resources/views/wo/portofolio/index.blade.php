@@ -19,9 +19,11 @@
 <div class="row">
   <div class="col">
 
+    @if($items->isEmpty())
     <div class="alert alert-secondary" role="alert">
       <p>Anda belum menambahkan data paket!</p>
     </div>
+    @endif
 
     @foreach($items as $item)
     <div class="card" style="margin-bottom: 10px;">
@@ -32,8 +34,17 @@
           <p class="card-text">tanggal acara : {{$item->tanggal_acara}}</p>
           <p class="card-text">lokasi : {{$item->lokasi}}</p>
           <p class="card-text">keterangan : {{$item->keterangan}}</p>
+
+          <!-- kalau tidak diperlukan fungsi detail ini hapus aja -->
+          <a href="{{route('wo.portofolio.show',$item->id)}}" class="card-link">Detail</a>
+          
           <a href="{{route('wo.portofolio.edit',$item->id)}}" class="card-link">Edit</a>
-          <a href="#" class="card-link">Hapus</a>
+          <!-- <a href="#" class="card-link">Hapus</a> -->
+          <form action="{{route('wo.portofolio.delete', $item->id)}}" method="post">
+            @csrf
+            @method('delete')
+            <button type="submit" class="btn btn-danger">Delete</button>
+          </form>
         </div>
     </div>
    @endforeach

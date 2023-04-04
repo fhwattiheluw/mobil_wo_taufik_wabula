@@ -85,8 +85,6 @@ class PortofolioWoController extends Controller
       $title = 'Detail Portofolio';
       $item = $portofolioWo->where('id',$id)->get();
 
-      // dd($item->all());
-
       return view('wo.portofolio.show', compact('title','item'));
     }
 
@@ -100,8 +98,9 @@ class PortofolioWoController extends Controller
     {
       $title = "Edit Portofolio";
         $item = $portofolioWo->find($id);
-
-        return view('wo.portofolio.edit', ['title'=>$title, 'item' => $item]);
+        
+        $pakets = PaketWo::where(['id_user'=>Auth::user()->id,'status'=> 'aktif'])->get();
+        return view('wo.portofolio.edit', compact('title','item','pakets'));
     }
 
     /**
@@ -113,7 +112,46 @@ class PortofolioWoController extends Controller
      */
     public function update(Request $request, PortofolioWo $portofolioWo)
     {
-        //
+      $image = $request->file('foto');
+      $this->validate($request, [
+        'id_user'=>'required',
+        'id_paket_wo'=>'required',
+        'nama_acara'=>'required',
+        'tanggal_acara'=>'required',
+        'lokasi'=>'required',
+        'keterangan'=>'required|max:255',        
+      ]);
+
+      $porto = PortofolioWo::find($request->id);
+      if($image == ""){
+        $porto->update([
+          'id_paket_wo'=>$request->id_paket_wo,
+          'nama_acara'=>$request->nama_acara,
+          'tanggal_acara'=>$request->tanggal_acara,
+          'lokasi'=>$request->lokasi,
+          'keterangan'=>$request->keterangan,
+        ]);
+      }else{
+        if ($image){
+          $validatedData['foto'] = $image->getClientOriginalName();
+          $image->storePubliclyAs('img', $image->getClientOriginalName(), 'public');
+        }
+
+        $porto->update([
+          'id_paket_wo'=>$request->id_paket_wo,
+          'nama_acara'=>$request->nama_acara,
+          'tanggal_acara'=>$request->tanggal_acara,
+          'lokasi'=>$request->lokasi,
+          'keterangan'=>$request->keterangan,
+          'foto'=>$image->getClientOriginalName()
+        ]);
+      }
+      
+      if ($porto){
+          return redirect(route('wo.portofolio'))->with('success', 'Berhasil ubah data');
+      }else{
+        return redirect(route('wo.portofolio'))->with(['error' => 'Gagal Ubah data']);
+      }
     }
 
     /**
@@ -122,8 +160,17 @@ class PortofolioWoController extends Controller
      * @param  \App\Models\PortofolioWo  $portofolioWo
      * @return \Illuminate\Http\Response
      */
-    public function destroy(PortofolioWo $portofolioWo)
+    public function destroy(PortofolioWo $portofolioWo,$id)
     {
-        //
+        $item = $portofolioWo->find($id);
+        if ($item){
+          $delete = $item->delete();
+        }
+        if ($delete){
+          return redirect(route('wo.portofolio'))->with('success', 'Berhasil hapus data');
+        }else{
+          return redirect(route('wo.portofolio'))->with(['error' => 'Gagal Hapus data']);
+        }
+
     }
 }

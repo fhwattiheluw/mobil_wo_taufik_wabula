@@ -126,11 +126,9 @@ class PaketWoController extends Controller
         }else{
             $this->validate($request, [
                 'foto_paket'     => 'required|image|mimes:png,jpg,jpeg',
-            ]);
-            // $image_name = $image->hashName();            
+            ]);         
             $image->storePubliclyAs('img', $image->getClientOriginalName(), 'public');
-            // $image->store('/assets');
-
+            
             $paketWo->update([
                 'nama_paket'=> $request->nama_paket,
                 'jenis'=> $request->jenis,
