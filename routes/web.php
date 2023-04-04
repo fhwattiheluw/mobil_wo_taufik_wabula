@@ -7,6 +7,7 @@ use App\Http\Controllers\userHomeController;
 use App\Http\Controllers\WoController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PortofolioWoController;
+use App\Http\Controllers\ProfilController;
 
 // ROUTE AWAL
 
@@ -50,6 +51,16 @@ Route::middleware(['auth'])->group(function (){
         Route::delete('/wo/portofolio/{id}/delete', [PortofolioWoController::class, 'destroy'])->name('wo.portofolio.delete');
 });
 
+Route::middleware(['auth'])->group(function (){
+        Route::get('/wo/profil', [ProfilController::class, 'index'])->name('wo.profil');
+        Route::get('/wo/profil/edit', [ProfilController::class, 'edit'])->name('wo.profil.edit');
+});
+
+//untuk register WO
+Route::get('/wo/register', [ProfilController::class, 'register'])->name('wo.profil.register');
+Route::post('/wo/register', [ProfilController::class, 'create'])->name('wo.profil.create');
+
+//menampilkan data-data untuk pelanggan
 Route::get('/paket-wo', [PaketWoController::class, 'index'])->name('paket-wo.index');
 Route::get('/paket-wo/{paket:id}', [PaketWoController::class, 'show'])->name('paketwo.show');
 

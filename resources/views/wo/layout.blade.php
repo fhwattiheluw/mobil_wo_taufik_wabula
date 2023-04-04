@@ -46,7 +46,7 @@
               <a class="nav-link" href="{{route('wo.portofolio')}}">Portofolio</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Profil</a>
+              <a class="nav-link" href="{{route('wo.profil')}}">Profil</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{{route('wo.logout') }}">Log out</a>
