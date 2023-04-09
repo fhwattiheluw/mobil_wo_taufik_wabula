@@ -20,9 +20,9 @@ class PortofolioWoController extends Controller
     {
       $title = 'Home Portofolio';
       // $items = PortofolioWo::find(Auth::user()->id)->get();
-      
+
       $items = PortofolioWo::where('id_user', Auth::user()->id)->get();
- 
+
       return view('wo.portofolio.index', ['title'=>$title, 'items' => $items]);
     }
 
@@ -62,7 +62,7 @@ class PortofolioWoController extends Controller
 
           $validatedData['foto'] = $image->getClientOriginalName();
         }
-        
+
 
         $porto = PortofolioWo::create($validatedData);
 
@@ -98,7 +98,7 @@ class PortofolioWoController extends Controller
     {
       $title = "Edit Portofolio";
         $item = $portofolioWo->find($id);
-        
+
         $pakets = PaketWo::where(['id_user'=>Auth::user()->id,'status'=> 'aktif'])->get();
         return view('wo.portofolio.edit', compact('title','item','pakets'));
     }
@@ -119,7 +119,7 @@ class PortofolioWoController extends Controller
         'nama_acara'=>'required',
         'tanggal_acara'=>'required',
         'lokasi'=>'required',
-        'keterangan'=>'required|max:255',        
+        'keterangan'=>'required|max:255',
       ]);
 
       $porto = PortofolioWo::find($request->id);
@@ -146,7 +146,7 @@ class PortofolioWoController extends Controller
           'foto'=>$image->getClientOriginalName()
         ]);
       }
-      
+
       if ($porto){
           return redirect(route('wo.portofolio'))->with('success', 'Berhasil ubah data');
       }else{

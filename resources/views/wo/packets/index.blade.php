@@ -54,15 +54,17 @@
         <p class="card-text">{{$item->spesifikasi}}</p>
         <p class="card-text">{{$item->harga}}</p>
 
-        <!-- <a href="{{route('wo.delete',$item->id)}}" class="card-link">Delete</a> -->
+
+      </div>
+      <div class="card-footer">
         <form action="{{route('wo.delete',$item->id)}}" method="post">
           @csrf
           @method('DELETE')
           <input type="hidden" name="id" value="{{$item->id}}">
-          <input type="submit" class="btn btn-danger" value="Delete">
-          <a href="{{route('wo.edit',$item->id)}}" type="button" class="btn btn-info">Edit</a>
+          <input type="submit" class="btn btn-link" value="Delete">
+          <a href="{{route('wo.edit',$item->id)}}" type="button" class="btn btn-link">Edit</a>
         </form>
-      </div>
+ </div>
     </div>
     @endforeach
     <!-- end menampilkan data paket -->

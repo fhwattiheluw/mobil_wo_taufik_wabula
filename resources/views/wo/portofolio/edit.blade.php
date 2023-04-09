@@ -1,25 +1,82 @@
 @extends('wo.layout')
 
 @section('content')
-<h3>{{$title}}</h3>
-<form class="form" action="{{route('wo.portofolio.edit', $item->id)}}" method="post" enctype="multipart/form-data">
+
+<!-- form edit data -->
+<form action="{{route('wo.portofolio.edit', $item->id)}}" method="post" enctype="multipart/form-data" class="card">
   @csrf
   @method('put')
   <input type="hidden" name="id" value="{{$item->id}}">
   <input type="hidden" name="id_user" value="{{$item->id_user}}">
-  Paket
-  <select name="id_paket_wo" id="id_paket">
-    <option value="">Pilih paket wo...</option>
-    @foreach($pakets as $paket)
-      <option value="{{$paket->id}}" @if($item->id_paket_wo == $paket->id) selected @endif>{{$paket->nama_paket}}</option>
-    @endforeach
-  </select> 
-  <br>
-  Nama Acara <input type="text" name="nama_acara" value="{{$item->nama_acara}}" placeholder="Nama Acara"><br>
-  Tanggal <input type="date" name="tanggal_acara" value="{{$item->tanggal_acara}}"><br>
-  Lokasi <input type="text" name="lokasi" placeholder="Lokasi" value="{{$item->lokasi}}"><br>
-  Keterangan <br><textarea name="keterangan" >{{$item->keterangan}}</textarea><br>
-  Foto <input type="file" id="foto" name="foto" ><br>
-  <button type="submit">Save</button><br>
+
+  <div class="card-body">
+    <h5 class="card-title">{{$title}}</h5>
+    <h6 class="card-subtitle mb-2 text-body-secondary">Form data portofolio</h6>
+
+    <div class="mb-3">
+      <label class="form-label">Paket</label>
+      <select class="form-control @error('id_paket_wo')is-invalid @enderror" name="id_paket_wo" id="id_paket_wo">
+        <option value="">Pilih paket wo...</option>
+        @foreach($pakets as $paket)
+          <option value="{{$paket->id}}" @if($item->id_paket_wo == $paket->id) selected @endif   >{{$paket->nama_paket}}|{{$paket->jenis}}</option>
+        @endforeach
+      </select>
+       @error('id_paket_wo')
+       <div class="invalid-feedback">
+        {{$message}}
+      </div>
+       @enderror
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Nama Acara</label>
+      <input type="text" class="form-control @error('nama_acara')is-invalid @enderror" name="nama_acara" placeholder="Nama Acara" value="{{old('nama_acara')}} {{$item->nama_acara}} ">
+      @error('id_paket_wo')
+      <div class="invalid-feedback">
+       {{$message}}
+     </div>
+      @enderror
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Tanggal</label>
+      <input type="date" class="form-control @error('tanggal_acara')is-invalid @enderror" name="tanggal_acara" value="{{old('tanggal_acara')}} {{$item->tanggal_acara}}">
+      @error('tanggal_acara')
+      <div class="invalid-feedback">
+       {{$message}}
+     </div>
+      @enderror
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Lokasi</label>
+      <input type="text" class="form-control @error('lokasi')is-invalid @enderror" name="lokasi" placeholder="Lokasi" value="{{old('lokasi')}} {{$item->lokasi}}">
+      @error('lokasi')
+      <div class="invalid-feedback">
+       {{$message}}
+     </div>
+      @enderror
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Keterangan</label>
+      <textarea name="keterangan" class="form-control @error('keterangan')is-invalid @enderror">{{old('keterangan')}}{{$item->keterangan}}</textarea>
+      @error('keterangan')
+      <div class="invalid-feedback">
+       {{$message}}
+     </div>
+      @enderror
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Foto</label>
+      <input type="file" id="foto" name="foto" class="form-control @error('foto')is-invalid @enderror" >
+      @error('foto')
+      <div class="invalid-feedback">
+       {{$message}}
+     </div>
+      @enderror
+    </div>
+  </div>
+  <div class="card-footer">
+    <button type="submit" class="btn btn-primary" >Save</button>
+  </div>
 </form>
+
 @endsection
