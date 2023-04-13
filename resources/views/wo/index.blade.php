@@ -1,5 +1,5 @@
 <!-- https://www.flaticon.com/packs/business-ethics-12 -->
-@extends('wo.layout') 
+@extends('wo.layout')
 
 @section('content')
 <div class="w-100" style="height: 200px;
@@ -29,7 +29,7 @@ background-size: cover;
                   Portofolio</a>
                 </div>
                 <div class="col">
-                  <a href="#" class="btn btn-outline-primary">
+                  <a href="{{route('wo.profil')}}" class="btn btn-outline-primary">
                     <img src="/assets/icon/badge.png" alt="">
                     <br>
                     Profil</a>

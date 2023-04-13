@@ -28,7 +28,7 @@
     </div>
 
     <div class="d-grid gap-2">
-      <a href="{{route('wo.profil.edit')}}" type="button" class="btn btn-primary">edit</a>
+      <a href="{{route('wo.profil.edit')}}" type="button" class="btn btn-primary">Ubah profil</a>
       <a href="#" class="text-center">Ubah kata sandi</a>
     </div>
 
