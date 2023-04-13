@@ -7,7 +7,7 @@
     <h5 class="card-title">{{$title}}</h5>
     <h6 class="card-subtitle mb-2 text-body-secondary">informasi</h6>
 
-    <img src="https://media.istockphoto.com/id/1224774389/vector/user-profile-or-my-account-avatar-login-icon-with-man-male-face-smile-symbol-flat-vector.jpg?s=170667a&w=0&k=20&c=gm8BmPyZ3ytVUz8vhJ3vR3O-3Ou84z7zsHiZa3kjbd0=" alt="Profil" class="img-fluid shadow" style="border-radius: 100%; margin-bottom: 10px; width: 150px;">
+    <img src="https://media.istockphoto.com/id/1224774389/vector/user-profile-or-my-account-avatar-login-icon-with-man-male-face-smile-symbol-flat-vector.jpg?s=170667a&w=0&k=20&c=gm8BmPyZ3ytVUz8vhJ3vR3O-3Ou84z7zsHiZa3kjbd0=" alt="Profil" class="img-fluid shadow" style="border-radius: 100%; margin-bottom: 10px; width: 100px;">
 
 <!-- <img src="{{url(Storage::url('public/img/'.$item->foto))}}" alt="Profil" width="500px">     -->
     <div class="form-floating mb-3">
