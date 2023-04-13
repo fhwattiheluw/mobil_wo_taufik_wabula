@@ -1,8 +1,6 @@
 @extends('wo.layout')
 
 @section('content')
-<h3>{{$title}}</h3>
-
 <form action="{{route('wo.portofolio.create')}}" method="post" enctype="multipart/form-data" class="card">
   @csrf
   <div class="card-body">
