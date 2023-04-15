@@ -36,7 +36,7 @@ class UserController extends Controller
             return redirect()->route('wo.home');
         }
         
-        return back()->with('loginError', 'Login failed!');
+        return back()->withErrors(['login' => 'Email atau password salah']);
     }
 
     /**
