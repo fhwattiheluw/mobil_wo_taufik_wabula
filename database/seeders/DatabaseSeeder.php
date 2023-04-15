@@ -7,6 +7,7 @@ use App\Models\PaketWo;
 use Illuminate\Support\Str;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
@@ -27,7 +28,7 @@ class DatabaseSeeder extends Seeder
             'foto' => 'pengguna1.jpg',
             'jenis_user' => 'pengguna',
             'email_verified_at' => now(),
-            'password' => bcrypt('password'),
+            'password' => Hash::make('password'),
             'remember_token' => Str::random(10),
             'created_at' => now(),
             'updated_at' => now(),
@@ -41,7 +42,7 @@ class DatabaseSeeder extends Seeder
             'foto' => 'pengguna2.jpg',
             'jenis_user' => 'pengguna',
             'email_verified_at' => now(),
-            'password' => bcrypt('password'),
+            'password' => Hash::make('password'),
             'remember_token' => Str::random(10),
             'created_at' => now(),
             'updated_at' => now(),
@@ -55,7 +56,7 @@ class DatabaseSeeder extends Seeder
             'foto' => 'pengguna3.jpg',
             'jenis_user' => 'pengguna',
             'email_verified_at' => now(),
-            'password' => bcrypt('password'),
+            'password' => Hash::make('password'),
             'remember_token' => Str::random(10),
             'created_at' => now(),
             'updated_at' => now(),
@@ -70,7 +71,7 @@ class DatabaseSeeder extends Seeder
             'foto' => 'wo1.jpg',
             'jenis_user' => 'wo',
             'email_verified_at' => now(),
-            'password' => bcrypt('password'),
+            'password' => Hash::make('password'),
             'remember_token' => Str::random(10),
             'created_at' => now(),
             'updated_at' => now(),
@@ -84,7 +85,7 @@ class DatabaseSeeder extends Seeder
             'foto' => 'wo2.jpg',
             'jenis_user' => 'wo',
             'email_verified_at' => now(),
-            'password' => bcrypt('password'),
+            'password' => Hash::make('password'),
             'remember_token' => Str::random(10),
             'created_at' => now(),
             'updated_at' => now(),
@@ -97,7 +98,7 @@ class DatabaseSeeder extends Seeder
             'foto' => 'wo3.jpg',
             'jenis_user' => 'wo',
             'email_verified_at' => now(),
-            'password' => bcrypt('password'),
+            'password' => Hash::make('password'),
             'remember_token' => Str::random(10),
             'created_at' => now(),
             'updated_at' => now(),

@@ -54,6 +54,9 @@ Route::middleware(['auth'])->group(function (){
 Route::middleware(['auth'])->group(function (){
         Route::get('/wo/profil', [ProfilController::class, 'index'])->name('wo.profil');
         Route::get('/wo/profil/edit', [ProfilController::class, 'edit'])->name('wo.profil.edit');
+        Route::post('/wo/profil/edit', [ProfilController::class, 'update'])->name('wo.profil.update');
+        Route::get('/wo/profil/pass/edit', [ProfilController::class, 'pass_edit'])->name('wo.profil.pass.edit');
+        Route::post('/wo/profil/pass/edit', [ProfilController::class, 'pass_update'])->name('wo.profil.pass.update');
 });
 
 //untuk register WO
