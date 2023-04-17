@@ -27,6 +27,7 @@ Route::get('user/wo/paket/{id_wo}/{paket}', [WoController::class, 'view_paket'])
 Route::get('/wo/login', 'App\Http\Controllers\UserController@showLoginForm')->name('login');
 Route::post('/wo/login', [UserController::class, 'login']);
 Route::get('/wo/logout', [UserController::class, 'logout'])->name('wo.logout');
+Route::get('/wo/signup', [UserController::class, 'form_signup'])->name('wo.signup');
 
 // khusus untuk login
 Route::middleware(['auth'])->group(function () {

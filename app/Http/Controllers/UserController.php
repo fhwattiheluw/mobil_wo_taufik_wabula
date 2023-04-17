@@ -35,7 +35,7 @@ class UserController extends Controller
             $request->session()->regenerate();
             return redirect()->route('wo.home');
         }
-        
+
         return back()->withErrors(['login' => 'Email atau password salah']);
     }
 
@@ -54,5 +54,10 @@ class UserController extends Controller
         $request->session()->regenerateToken();
 
         return redirect()->route('login');
+    }
+
+    public function form_signup(Request $request)
+    {
+      return view('wo.signup');
     }
 }

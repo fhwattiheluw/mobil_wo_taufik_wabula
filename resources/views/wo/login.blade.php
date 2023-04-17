@@ -92,7 +92,7 @@
       <!-- Form "Register Now" And "Forgot Password" Link Section. -->
 
       <div class="center" style="font-size:14px;"><br>
-        <a href="#">Register Now!</a>
+        <a href="{{route('wo.signup')}} ">Belum punya akun!</a>
 
       </div><br>
     </div>
