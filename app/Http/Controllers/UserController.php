@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -59,5 +61,24 @@ class UserController extends Controller
     public function form_signup(Request $request)
     {
       return view('wo.signup');
+    }
+
+    public function create(Request $request)
+    {
+        $this->validate($request, [
+            'nama' => 'required|max:50',
+            'email' => 'required|email',
+            'password' => 'required',
+        ]);
+
+        
+
+        $wo = new User();
+        $wo->nama = $request->nama;
+        $wo->email = $request->email;
+        $wo->password = Hash::make($request->password);
+        $wo->save();
+
+        return view('wo.login')->with('succes','Registrasi berhasil');
     }
 }

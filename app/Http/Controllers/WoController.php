@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
+use App\Models\PortofolioWo;
 
 class WoController extends Controller
 {
@@ -22,12 +23,14 @@ class WoController extends Controller
         return view('user/wo_about',$data);
     }
 
-    public function porto_wo($id_wo){
-        $data['id_wo'] = $id_wo;
-        $data['about'] = DB::table('users')->select('*')->where('id',$id_wo)->get();
-        return view('user/wo_porto',$data);
+    public function porto_wo($id_wo)
+    {
+        $title = "Portofolio";
+        $porto = PortofolioWo::where('id_user',$id_wo)->get();
+        
+        return view('user/wo_porto',['title'=>$title, 'porto'=>$porto,'id_wo'=>$id_wo]);
     }
-
+    
     public function paket_wo($id_wo){
         $data['id_wo'] = $id_wo;
         $data['about'] = DB::table('users')->select('*')->where('id',$id_wo)->get();

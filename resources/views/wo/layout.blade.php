@@ -19,6 +19,12 @@
     margin-bottom: 30px;
     z-index: 1000;
   }
+  .btn-link {
+    text-decoration: none;
+  }
+  a {
+    text-decoration: none;
+  }
   </style>
 </head>
 <body style="padding-top:50px;">

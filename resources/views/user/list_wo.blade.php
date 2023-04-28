@@ -6,7 +6,7 @@
 	<div class="divider"></div>
 	<div class="section">
 		<div class="row">
-			@for($i = 0; $i < 20; $i++)
+			@foreach($items as $item)
 			<a href="#" class="col s4 waves-effect waves-light">
 				<div class="row holign-wrapper">
 		            <div class="col offset-s1 s10">
@@ -14,12 +14,12 @@
 		            </div>
 		            <div class="col s12 center">
 		              <span class="black-text">
-		                nama WO
+		                {{$item->nama}}
 		              </span>
 		            </div>
 		          </div>
 			</a>
-			@endfor
+			@endforeach
 		</div>
 	</div>	
 </div>

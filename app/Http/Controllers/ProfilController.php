@@ -51,7 +51,7 @@ class ProfilController extends Controller
 
         if ($image) {
             $this->validate($request, [
-                'foto' => 'required|image|mimes:jpg,jpeg,png,bmp,gif,svg|max:2048',
+                'foto' => 'required|image|mimes:jpg,jpeg,png,bmp,gif,svg|dimensions:max_width=100,max_height=200',
             ]);
 
             $image->storePubliclyAs('img', $image->getClientOriginalName(), 'public');

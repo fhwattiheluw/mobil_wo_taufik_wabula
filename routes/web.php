@@ -28,6 +28,7 @@ Route::get('/wo/login', 'App\Http\Controllers\UserController@showLoginForm')->na
 Route::post('/wo/login', [UserController::class, 'login']);
 Route::get('/wo/logout', [UserController::class, 'logout'])->name('wo.logout');
 Route::get('/wo/signup', [UserController::class, 'form_signup'])->name('wo.signup');
+Route::post('/wo/signup', [UserController::class, 'create'])->name('wo.create');
 
 // khusus untuk login
 Route::middleware(['auth'])->group(function () {

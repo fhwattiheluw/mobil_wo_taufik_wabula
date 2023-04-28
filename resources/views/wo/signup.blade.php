@@ -34,6 +34,7 @@
 
   <div class="container" style="margin-top: 30px;">
     <form action="#" method="POST">
+      @csrf
       <div class="row">
         <div class="col s12 m12 l12 center">
           <img src="/assets/img/user.png" alt="" class="responsive-img circle" style="width:100px;">

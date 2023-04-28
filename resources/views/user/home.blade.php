@@ -29,7 +29,9 @@
     
     <div class="card">
       <div class="card-image waves-effect waves-block waves-light">
-        <img class="activator" src="/assets/img/paket1.jpg">
+        <!-- <img class="activator" src="/assets/img/paket1.jpg"> -->
+        <img class="activator" src="{{url(Storage::url('public/img/'.$paket->foto_paket))}}">
+
       </div>
       <div class="card-content">
         <span class="card-title activator grey-text text-darken-4">{{ $paket->nama_paket }}<i class="material-icons right">zoom_out_map</i></span>
@@ -53,10 +55,10 @@
     <div class="row">
 
       @foreach($wo as $worg)
-      <a href="{{route('user.wo.about',['id_wo'=>$paket->id])}}" class="col s4 waves-effect waves-light">
+      <a href="{{route('user.wo.about',['id_wo'=>$worg->id])}}" class="col s4 waves-effect waves-light">
         <div class="row holign-wrapper">
                 <div class="col offset-s1 s10">
-                  <img src="https://materializecss.com/images/yuna.jpg" alt="" class="circle responsive-img z-depth-3"> <!-- notice the "circle" class -->
+                  <img src="{{url(Storage::url('public/img/'.$worg->foto))}}" alt="" class="circle responsive-img z-depth-3"> <!-- notice the "circle" class -->
                 </div>
                 <div class="col s12 center">
                   <span class="black-text">

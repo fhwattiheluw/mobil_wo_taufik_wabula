@@ -2,6 +2,7 @@
  
 namespace App\Http\Controllers;
  
+use App\Models\User;
 use App\Models\PaketWo;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB; /*library query builder*/
@@ -11,7 +12,7 @@ class userHomeController extends Controller
 {
 	public function index(){
 		return view('user.home', [
-			'pakets' => PaketWo::where('status', 'aktif')->paginate(5),
+			'pakets' => PaketWo::where('status', 'aktif')->get(),
 			'wo' => DB::table('users')->select("*")->limit(9)->get()
 		]);
 	}
@@ -24,13 +25,17 @@ class userHomeController extends Controller
 
 	public function list_paket()
 	{
-		return view('user.list_paket', [
-			'pakets' => PaketWo::where('status', 'aktif')->paginate(20) 
-		]);
+		// return view('user.list_paket', [
+		// 	'pakets' => PaketWo::where('status', 'aktif')->get() 
+		// ]);
+		$pakets = PaketWo::where('status','aktif')->get();
+
+		return view('user.list_paket', ['pakets'=>$pakets]);
 	}
 
 	public function list_wedding(){
-		return view('user.list_wo');
+		$items = User::all();
+		return view('user.list_wo', ['items'=>$items]);
 	}
 
 

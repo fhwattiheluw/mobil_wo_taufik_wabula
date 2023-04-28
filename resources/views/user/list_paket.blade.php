@@ -4,7 +4,7 @@
 <!-- lokasi CSS -->
 @endsection
 
-@section('content')
+@section('content-main')
 <div class="container">
   <h5 class="black-text">Paket Wedding organizer</h5>
 

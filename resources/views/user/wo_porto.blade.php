@@ -71,9 +71,9 @@
 
   <div class="row">
     <div class="col s12">
-      @for($i = 1; $i < 10; $i++)
-      <img class="responsive-img z-depth-3 materialboxed" style="margin-bottom: 10px;" src="https://source.unsplash.com/_cvwXhGqG-o/300x300">
-      @endfor
+      @foreach($porto as $porto)
+      <img class="responsive-img z-depth-3 materialboxed" style="margin-bottom: 10px;" src="{{url(Storage::url('public/img/'.$porto->foto))}}">
+      @endforeach
     </div>
   </div>
             
