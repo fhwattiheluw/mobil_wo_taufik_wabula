@@ -7,12 +7,13 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use App\Models\PortofolioWo;
+use App\Models\PaketWo;
 
 class WoController extends Controller
 {
     public function index()
     {
-        $title = "Wedding Organizer";        
+        $title = "Wedding Organizer";
         return view('wo.index', compact('title'));
     }
 
@@ -27,13 +28,14 @@ class WoController extends Controller
     {
         $title = "Portofolio";
         $porto = PortofolioWo::where('id_user',$id_wo)->get();
-        
+
         return view('user/wo_porto',['title'=>$title, 'porto'=>$porto,'id_wo'=>$id_wo]);
     }
-    
-    public function paket_wo($id_wo){
+
+    public function paket_wo($id_wo,$paket = 'null'){
         $data['id_wo'] = $id_wo;
         $data['about'] = DB::table('users')->select('*')->where('id',$id_wo)->get();
+        $data['pakets'] = PaketWo::where('id_user',$id_wo)->where('jenis',$paket)->get();
         return view('user/wo_paket',$data);
     }
 

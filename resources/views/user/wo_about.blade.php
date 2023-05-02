@@ -12,7 +12,7 @@
   <div class="card">
     <div class="card-content">
       <div class="col s12 center">
-        <img src="https://materializecss.com/images/yuna.jpg" alt="" class="circle responsive-img z-depth-3">
+        <img src="{{url(Storage::url('public/img/'.$about[0]->foto))}}" alt="" class="circle responsive-img z-depth-3" style="width: 150px; height: 150px;">
       </div>
       <table>
     <tr>
@@ -27,12 +27,9 @@
     <tr>
       <td>Alamat </td><td>:</td><td>{{$about[0]->alamat}}</td>
     </tr>
-    <tr>
-      <td>nama</td><td>:</td><td>{{$about[0]->foto}}</td>
-    </tr>
   </table>
     </div>
   </div>
-  
-            
+
+
 @endsection
