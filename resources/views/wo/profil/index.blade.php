@@ -7,7 +7,7 @@
     <h5 class="card-title">{{$title}}</h5>
     <h6 class="card-subtitle mb-2 text-body-secondary">informasi</h6>
 
-    <img src="{{url(Storage::url('public/img/'.$item->foto))}}" alt="Profil" class="img-fluid shadow" style="border-radius: 100%; margin-bottom: 10px; width: 100px;">
+    <img src="{{url(Storage::url('public/img/'.$item->foto))}}" alt="Profil" class="img-fluid shadow" style="border-radius: 100%; margin-bottom: 10px; width: 100px; height: 100px;">
 
     <!-- <img src="{{url(Storage::url('public/img/'.$item->foto))}}" alt="Profil" width="500px">     -->
     <div class="form-floating mb-3">
