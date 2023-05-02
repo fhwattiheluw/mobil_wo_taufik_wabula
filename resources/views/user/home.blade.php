@@ -26,7 +26,7 @@
   <div class="divider"></div>
   <div class="section">
     @foreach($pakets as $paket)
-    
+
     <div class="card">
       <div class="card-image waves-effect waves-block waves-light">
         <!-- <img class="activator" src="/assets/img/paket1.jpg"> -->
@@ -37,7 +37,7 @@
         <span class="card-title activator grey-text text-darken-4">{{ $paket->nama_paket }}<i class="material-icons right">zoom_out_map</i></span>
         <p><a href="{{route('user.wo.about',['id_wo'=>$paket->id_user])}}">{{ $paket->user->nama }}</a></p> <!-- redirect ke halaman tentang WO -->
       </div>
-      <div class="card-reveal">      
+      <div class="card-reveal">
         <span class="card-title grey-text text-darken-4">{{ $paket->nama_paket }}<i class="material-icons right">close</i></span>
         <p>{{ $paket->jenis_paket }}</p>
         <p>Rp.{{ $paket->harga }}</p>
@@ -45,7 +45,7 @@
         <p><a class="waves-effect pink lighten-3 btn btn-small" href="https://api.whatsapp.com/send?phone={{ $paket->user->nomor_hp }}&text=Apakah bisa pesan paket ini ?"><i class="material-icons right">book</i>Booking</a></p>
       </div>
     </div>
-    
+
   @endforeach
   </div>
 
@@ -58,7 +58,7 @@
       <a href="{{route('user.wo.about',['id_wo'=>$worg->id])}}" class="col s4 waves-effect waves-light">
         <div class="row holign-wrapper">
                 <div class="col offset-s1 s10">
-                  <img src="{{url(Storage::url('public/img/'.$worg->foto))}}" alt="" class="circle responsive-img z-depth-3"> <!-- notice the "circle" class -->
+                  <img src="{{url(Storage::url('public/img/'.$worg->foto))}}" alt="" class="circle responsive-img z-depth-3" style="width: 50px; height: 50px;"> <!-- notice the "circle" class -->
                 </div>
                 <div class="col s12 center">
                   <span class="black-text">
@@ -69,7 +69,7 @@
       </a>
       @endforeach
     </div>
-  </div>  
+  </div>
 
 </div>
 

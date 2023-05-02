@@ -1,13 +1,13 @@
 <?php
- 
+
 namespace App\Http\Controllers;
- 
+
 use App\Models\User;
 use App\Models\PaketWo;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB; /*library query builder*/
 // use App\Models\User;
- 
+
 class userHomeController extends Controller
 {
 	public function index(){
@@ -26,7 +26,7 @@ class userHomeController extends Controller
 	public function list_paket()
 	{
 		// return view('user.list_paket', [
-		// 	'pakets' => PaketWo::where('status', 'aktif')->get() 
+		// 	'pakets' => PaketWo::where('status', 'aktif')->get()
 		// ]);
 		$pakets = PaketWo::where('status','aktif')->get();
 
