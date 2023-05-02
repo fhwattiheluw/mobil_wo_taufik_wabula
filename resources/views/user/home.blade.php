@@ -26,7 +26,7 @@
   <div class="divider"></div>
   <div class="section">
 
-  
+
     @foreach($pakets as $paket)
 
     <div class="card">
@@ -36,7 +36,7 @@
 
       </div>
       <div class="card-content">
-        <span class="card-title activator grey-text text-darken-4">{{ $paket->nama_paket }}<i class="material-icons right">zoom_out_map</i></span>
+        <span class="card-title activator grey-text text-darken-4">{{ $paket->nama_paket }}<span class="new badge" data-badge-caption="paket">{{$paket->jenis}}</span></span>
         <p><a href="{{route('user.wo.about',['id_wo'=>$paket->id_user])}}">{{ $paket->user->nama }}</a></p> <!-- redirect ke halaman tentang WO -->
       </div>
       <div class="card-reveal">
