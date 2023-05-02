@@ -27,9 +27,10 @@ class WoController extends Controller
     public function porto_wo($id_wo)
     {
         $title = "Portofolio";
+        $about= DB::table('users')->select('*')->where('id',$id_wo)->get();
         $porto = PortofolioWo::where('id_user',$id_wo)->get();
 
-        return view('user/wo_porto',['title'=>$title, 'porto'=>$porto,'id_wo'=>$id_wo]);
+        return view('user/wo_porto',['title'=>$title, 'porto'=>$porto,'id_wo'=>$id_wo,'about'=>$about]);
     }
 
     public function paket_wo($id_wo,$paket = 'null'){
