@@ -13,19 +13,19 @@
       <i class="material-icons circle yellow accent-4">business_center</i>
       <span class="title">PLATINUM</span>
       <p>PAKET</p>
-       <a href="{{route('user.pakets.jenis',['jenis'=>'platinum'])}} " class="secondary-content btn orange darken-1 waves-effect waves-light"><i class="material-icons">arrow_forward</i></a>
+       <a href="#!" class="secondary-content btn orange darken-1 waves-effect waves-light"><i class="material-icons">arrow_forward</i></a>
     </li>
     <li class="collection-item avatar">
       <i class="material-icons circle grey lighten-1">business_center</i>
       <span class="title">GOLD</span>
       <p>PAKET</p>
-       <a href="{{route('user.pakets.jenis',['jenis'=>'gold'])}} " class="secondary-content btn orange darken-1 waves-effect waves-light"><i class="material-icons">arrow_forward</i></a>
+       <a href="#!" class="secondary-content btn orange darken-1 waves-effect waves-light"><i class="material-icons">arrow_forward</i></a>
     </li>
     <li class="collection-item avatar">
       <i class="material-icons circle  brown lighten-1">business_center</i>
       <span class="title">SILVER</span>
       <p>PAKET</p>
-       <a href="{{route('user.pakets.jenis',['jenis'=>'silver'])}} " class="secondary-content btn orange darken-1 waves-effect waves-light"><i class="material-icons">arrow_forward</i></a>
+       <a href="#!" class="secondary-content btn orange darken-1 waves-effect waves-light"><i class="material-icons">arrow_forward</i></a>
     </li>
   </ul>
 

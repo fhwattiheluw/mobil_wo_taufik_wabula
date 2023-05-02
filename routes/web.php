@@ -18,6 +18,7 @@ Route::get('user/home', [userHomeController::class, 'index'])->name('user.home')
 Route::get('user/home/{id:id_user}', [userHomeController::class, 'show'])->name('user.show');
 Route::get('user/weddings', [userHomeController::class, 'list_wedding'])->name('user.weddings');
 Route::get('user/pakets', [userHomeController::class, 'list_paket'])->name('user.pakets');
+Route::get('user/pakets/{jenis}', [userHomeController::class, 'list_paket_jenis'])->name('user.pakets.jenis');
 Route::get('user/wo/about/{id_wo}', [WoController::class, 'about_wo'])->name('user.wo.about');
 Route::get('user/wo/porto/{id_wo}', [WoController::class, 'porto_wo'])->name('user.wo.porto');
 Route::get('user/wo/paket/{id_wo}', [WoController::class, 'paket_wo'])->name('user.wo.paket');

@@ -25,11 +25,14 @@ class userHomeController extends Controller
 
 	public function list_paket()
 	{
-		// return view('user.list_paket', [
-		// 	'pakets' => PaketWo::where('status', 'aktif')->get()
-		// ]);
 		$pakets = PaketWo::where('status','aktif')->get();
 
+		return view('user.list_paket', ['pakets'=>$pakets]);
+	}
+
+  public function list_paket_jenis($jenis = 'platinum')
+	{
+		$pakets = PaketWo::where('status','aktif')->where('jenis',$jenis)->get();
 		return view('user.list_paket', ['pakets'=>$pakets]);
 	}
 
