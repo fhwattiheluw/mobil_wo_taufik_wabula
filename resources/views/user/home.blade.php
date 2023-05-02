@@ -25,6 +25,8 @@
   <h5 class="black-text">Paket Wedding</h5>
   <div class="divider"></div>
   <div class="section">
+
+  
     @foreach($pakets as $paket)
 
     <div class="card">

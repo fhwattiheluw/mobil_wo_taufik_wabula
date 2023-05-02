@@ -12,7 +12,7 @@ class userHomeController extends Controller
 {
 	public function index(){
 		return view('user.home', [
-			'pakets' => PaketWo::where('status', 'aktif')->get(),
+			'pakets' => PaketWo::where('status', 'aktif')->limit(10)->get(),
 			'wo' => DB::table('users')->select("*")->limit(9)->get()
 		]);
 	}
