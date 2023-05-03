@@ -3,7 +3,7 @@
 
 ## configurasi awal app
 ### 1. IP komputer
-pastikan komputer yang menjadi server harus menggunakan **ip static 192.168.1.1**
+pastikan komputer yang menjadi server harus menggunakan **ip static 192.168.1.102**
 
 ### 2. Build database
 + masuk pada ```http://localhost/phpmyadmin``` dan buat database dengan nama **```p_larawed```**
@@ -15,7 +15,8 @@ pastikan komputer yang menjadi server harus menggunakan **ip static 192.168.1.1*
 + jalankan xampp
 + start mysql pada **xampp**
 + Jalankan **cmd** pada folder mobil_wo_taufik_wabula
-+ Selanjutnya masukan perintah berikut : ```php artisan serve``` untuk menjalankan server laravel 8
++ Selanjutnya masukan perintah berikut : ```php artisan serve — host 192.168.1.102 — port 8000``` untuk menjalankan server laravel 8
++ (opsi) untuk dapat dibuka lewat website akses ke url 	```192.168.1.102:8000```
 
 
 ## Akun wo
