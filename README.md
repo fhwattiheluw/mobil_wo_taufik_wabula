@@ -15,7 +15,7 @@ pastikan komputer yang menjadi server harus menggunakan **ip static 192.168.1.10
 + jalankan xampp
 + start mysql pada **xampp**
 + Jalankan **cmd** pada folder mobil_wo_taufik_wabula
-+ Selanjutnya masukan perintah berikut pada **cmd** : ```php artisan serve — host 192.168.1.102 — port 8000``` untuk menjalankan server laravel 8
++ Selanjutnya masukan perintah berikut pada **cmd** : ```php artisan serve --host 0.0.0.0``` untuk menjalankan server laravel 8
 + silahkan akses app android
 + (opsi) untuk dapat dibuka lewat website akses ke url 	```192.168.1.102:8000```
 
