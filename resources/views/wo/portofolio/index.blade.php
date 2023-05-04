@@ -54,7 +54,7 @@
           <form action="{{route('wo.portofolio.delete', $item->id)}}" method="post">
             @csrf
             @method('delete')
-            <a href="{{route('wo.portofolio.show',$item->id)}}" class="btn btn-link card-link">Detail</a>
+            <!-- <a href="{{route('wo.portofolio.show',$item->id)}}" class="btn btn-link card-link">Detail</a> -->
             <a href="{{route('wo.portofolio.edit',$item->id)}}" class="btn btn-link card-link">Edit</a>
             <button type="submit" class="btn btn-link card-link">Delete</button>
           </form>

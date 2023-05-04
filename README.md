@@ -1,7 +1,10 @@
 # mobil_wo_taufik_wabula
 >app mobil_wo_taufik_wabula di develop menggunakan [laravel 8](https://laravel.com/docs/8.x)
 # convert web ke apk
-untuk membuat apk dalam bentuk webview menggunakan bantuan [**webintoapp**](https://www.webintoapp.com/)
+untuk membuat apk dalam bentuk webview menggunakan bantuan [**creator.kodular.io**](https://creator.kodular.io/#6711221539569664/)
+# framework front-end
++ home wedding menggunakan https://materializecss.com/
++ dashboard user wo menggunakan https://getbootstrap.com/docs/5.3
 ## configurasi awal app
 ### 1. IP komputer
 pastikan komputer yang menjadi server harus menggunakan **ip static 192.168.1.102**
@@ -18,7 +21,7 @@ pastikan komputer yang menjadi server harus menggunakan **ip static 192.168.1.10
 + Jalankan **cmd** pada folder mobil_wo_taufik_wabula
 + Selanjutnya masukan perintah berikut pada **cmd** : ```php artisan serve --host 0.0.0.0``` untuk menjalankan server laravel 8
 + silahkan akses app android
-+ (opsi) untuk dapat dibuka lewat website akses ke url 	```192.168.1.102:8000```
++ (opsi) untuk dapat dibuka lewat website akses ke url 	```192.168.1.100:8000```
 
 
 ## Akun wo
