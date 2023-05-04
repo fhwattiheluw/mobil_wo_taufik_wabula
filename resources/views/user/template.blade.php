@@ -19,7 +19,7 @@
     <div class="">
       <nav class="orange darken-1">
     <div class="nav-wrapper">
-      <a href="#" data-target="menu" class="sidenav-trigger"><i class="material-icons">menu</i></a> 
+      <a href="#" data-target="menu" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <a href="#" class="brand-logo center">nikahan</a>
     </div>
   </nav>
@@ -30,12 +30,12 @@
     <li><a href="{{route('user.home')}}"><i class="material-icons" style="color: #ff6d00 ;">home</i>Beranda</a></li>
     <li><a href="{{route('user.pakets')}}"><i class="material-icons" style="color: #ff6d00 ;">redeem</i>Paket wedding</a></li>
     <li><a href="{{route('user.weddings')}} "><i class="material-icons" style="color: #ff6d00 ;">local_library</i>Wedding organizer</a></li>
-    <li><a href="{{route('login')}} "><i class="material-icons" style="color: #ff6d00 ;">person_pin</i>login WO</a></li>
+    <!-- <li><a href="{{route('login')}} "><i class="material-icons" style="color: #ff6d00 ;">person_pin</i>login WO</a></li> -->
   </ul>
 
   @yield('nav_wo') <!-- navbar bottom khusus untuk tampilan WO -->
     @yield('content-main')
-  
+
 
 
     <!--Import jQuery before materialize.js-->
