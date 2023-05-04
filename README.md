@@ -1,13 +1,16 @@
 # mobil_wo_taufik_wabula
 >app mobil_wo_taufik_wabula di develop menggunakan [laravel 8](https://laravel.com/docs/8.x)
 # convert web ke apk
-untuk membuat apk dalam bentuk webview menggunakan bantuan [**creator.kodular.io**](https://creator.kodular.io/#6711221539569664/)
+> untuk Wo projek dengan nama **auth_wo_taufik**, sedangkan untuk user projek dengan nama **user_wo_taufik**
++ untuk membuat apk dalam bentuk webview menggunakan bantuan [**creator.kodular.io**](https://creator.kodular.io/#6711221539569664/)
++ pada bagian **All Component** pilih web_Viewer1
++ pada bagian **properties**. Ubah **Home Url** sesuai dengan **IP Laptop**.
+> contoh : jika ip laptop **192.169.209.3**, maka home url **http://192.169.209.3:8000/.../...**
++ Selanjutnya Export **Android App (.Apk)**
 # framework front-end
 + home wedding menggunakan https://materializecss.com/
 + dashboard user wo menggunakan https://getbootstrap.com/docs/5.3
-# download apk
-lokasi apk pada folder /apk
-## configurasi awal app
+# configurasi awal app
 ### 1. IP komputer
 pastikan komputer yang menjadi server harus menggunakan **ip static 192.168.1.102**
 
