@@ -3,6 +3,7 @@
 # convert web ke apk
 > untuk Wo projek dengan nama **auth_wo_taufik**, sedangkan untuk user projek dengan nama **user_wo_taufik**
 + untuk membuat apk dalam bentuk webview menggunakan bantuan [**creator.kodular.io**](https://creator.kodular.io/#6711221539569664/)
++ import file **.aia** yang didalam folder \apk\projek kodular
 + pada bagian **All Component** pilih **web_Viewer1**
 + pada bagian **properties**. Ubah **Home Url** sesuai dengan **IP Laptop**.
 > contoh : jika ip laptop **192.169.209.3**, maka home url **http://192.169.209.3:8000/.../...**
