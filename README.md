@@ -5,6 +5,8 @@ untuk membuat apk dalam bentuk webview menggunakan bantuan [**creator.kodular.io
 # framework front-end
 + home wedding menggunakan https://materializecss.com/
 + dashboard user wo menggunakan https://getbootstrap.com/docs/5.3
+# download apk
+lokasi apk pada folder /apk
 ## configurasi awal app
 ### 1. IP komputer
 pastikan komputer yang menjadi server harus menggunakan **ip static 192.168.1.102**
