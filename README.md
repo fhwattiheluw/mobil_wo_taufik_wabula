@@ -3,27 +3,25 @@
 # convert web ke apk
 > untuk Wo projek dengan nama **auth_wo_taufik**, sedangkan untuk user projek dengan nama **user_wo_taufik**
 + untuk membuat apk dalam bentuk webview menggunakan bantuan [**creator.kodular.io**](https://creator.kodular.io/#6711221539569664/)
-+ pada bagian **All Component** pilih web_Viewer1
++ pada bagian **All Component** pilih **web_Viewer1**
 + pada bagian **properties**. Ubah **Home Url** sesuai dengan **IP Laptop**.
 > contoh : jika ip laptop **192.169.209.3**, maka home url **http://192.169.209.3:8000/.../...**
-+ Selanjutnya Export **Android App (.Apk)**
++ Selanjutnya **Export > Android App (.Apk)**
 # framework front-end
 + home wedding menggunakan https://materializecss.com/
 + dashboard user wo menggunakan https://getbootstrap.com/docs/5.3
 # configurasi awal app
-### 1. IP komputer
-pastikan komputer yang menjadi server harus menggunakan **ip static 192.168.1.102**
 
-### 2. Build database
+## Build database
 + masuk pada ```http://localhost/phpmyadmin``` dan buat database dengan nama **```p_larawed```**
-+ buka **cmd** pada folder mobil_wo_taufik_wabula
++ buka **cmd** pada folder **mobil_wo_taufik_wabula**
 + ketik perintah berikut ```php artisan migrate:fresh --seed``` untuk [menjalankan seeders](https://laravel.com/docs/8.x/seeding#running-seeders) dan tunggu hingga selesai
 
 
 ## Akses app
 + jalankan xampp
 + start mysql pada **xampp**
-+ Jalankan **cmd** pada folder mobil_wo_taufik_wabula
++ Jalankan **cmd** pada folder **mobil_wo_taufik_wabula**
 + Selanjutnya masukan perintah berikut pada **cmd** : ```php artisan serve --host 0.0.0.0``` untuk menjalankan server laravel 8
 + silahkan akses app android
 + (opsi) untuk dapat dibuka lewat website akses ke url 	```192.168.1.100:8000```
