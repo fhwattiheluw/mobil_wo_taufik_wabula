@@ -1,6 +1,7 @@
 # mobil_wo_taufik_wabula
 >app mobil_wo_taufik_wabula di develop menggunakan [laravel 8](https://laravel.com/docs/8.x)
-
+# convert web ke apk
+untuk membuat apk dalam bentuk webview menggunakan bantuan [**webintoapp**](https://www.webintoapp.com/)
 ## configurasi awal app
 ### 1. IP komputer
 pastikan komputer yang menjadi server harus menggunakan **ip static 192.168.1.102**
